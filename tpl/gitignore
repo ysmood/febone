@@ -1,0 +1,6 @@
+mock
+node_modules
+asset
+*.log
+.DS_Store
+*.db

@@ -1,0 +1,68 @@
+{
+  "name": "demo",
+  "description": "a demo project",
+  "author": "mx",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "no": "no"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.com/mx/demo.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "mx-fe-bone-kit": "0.4.2",
+    "babel": "5.8.23",
+    "babel-core": "5.8.25",
+    "babel-eslint": "4.1.3",
+    "babel-loader": "5.3.3",
+    "css-loader": "0.21.0",
+    "eslint": "1.8.0",
+    "eslint-loader": "1.1.0",
+    "less": "2.5.3",
+    "less-loader": "2.2.1",
+    "node-libs-browser": "0.5.3",
+    "nokit": "0.16.0",
+    "path-to-regexp": "1.2.1",
+    "send": "0.13.0",
+    "style-loader": "0.13.0",
+    "webpack": "1.12.2"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "rules": {
+      "indent": [
+        2,
+        4
+      ],
+      "quotes": [
+        2,
+        "single"
+      ],
+      "linebreak-style": [
+        2,
+        "unix"
+      ],
+      "semi": [
+        2,
+        "always"
+      ],
+      "no-trailing-spaces": 2,
+      "space-before-function-paren": [
+        2,
+        "always"
+      ],
+      "eqeqeq": [
+        2,
+        "allow-null"
+      ]
+    },
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "extends": "eslint:recommended"
+  }
+}

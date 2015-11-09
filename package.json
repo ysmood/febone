@@ -1,0 +1,68 @@
+{
+  "name": "mx-fe-bone",
+  "version": "0.3.1",
+  "description": "MX FE project scaffolding helper",
+  "main": "lib/index.js",
+  "bin": {
+    "mx-fe-bone": "bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ysmood/mx-fe-bone.git"
+  },
+  "scripts": {
+    "no": "no",
+    "test": "no test"
+  },
+  "files": [
+    "tpl", "bin"
+  ],
+  "keywords": [
+    "scaffolding"
+  ],
+  "author": "mx",
+  "license": "MIT",
+  "dependencies": {
+    "nokit": "0.16.0"
+  },
+  "devDependencies": {
+    "junit": "0.9.1"
+  },
+  "eslintConfig": {
+    "rules": {
+      "indent": [
+        2,
+        4
+      ],
+      "quotes": [
+        2,
+        "single"
+      ],
+      "linebreak-style": [
+        2,
+        "unix"
+      ],
+      "semi": [
+        2,
+        "always"
+      ],
+      "no-trailing-spaces": 2,
+      "space-before-function-paren": [
+        2,
+        "always"
+      ],
+      "eqeqeq": [
+        2,
+        "allow-null"
+      ],
+      "no-console": [
+        0
+      ]
+    },
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "extends": "eslint:recommended"
+  }
+}
