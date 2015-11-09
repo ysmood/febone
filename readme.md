@@ -2,8 +2,7 @@
 
 0. 创建一个空文件夹, `cd` 到这个文件夹里
 
-0. 执行 `npm i mx-fe-bone`，
-   `stable` 这个请根据需求变更，这是 git 的 tag 或 commit hash 值
+0. 执行 `npm i mx-fe-bone`
 
 0. 执行 `node_modules/.bin/mx-fe-bone`，请耐心等待，这个步骤会下载开发的全部基础依赖，会比较耗时
 
