@@ -47,6 +47,7 @@ export default (task, option) => {
     option('--webpack <on|off>', '是否开启 webpack', 'on');
     option('--pac <on|off>', '是否动设置全局 pac 代理', 'on');
     option('--liveReload <on|off>', '是否启动自动刷新页面', 'on');
+    option('--lang <babel>', '选择主语言与处理器 babel 或 typescript', 'babel');
 
     task('default dev', '启动调试服务器和 API 代理', require('mx-fe-bone-kit/lib/dev'));
 
