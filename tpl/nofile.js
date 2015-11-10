@@ -31,23 +31,26 @@ import kit from 'nokit';
  */
 
 export default (task, option) => {
-    option('--cdnPrefix <http://demo.com>', 'CDN 前缀', 'http://demo.com');
-    option('--port <8732>', '本地 mock 数据服务端口号', '8732');
-    option('--pacPort <58732>', '代理服务器端口', '58732');
-    option('--devHost <demo.com>', '线上域名，结合 pac 代理', 'demo.com');
-    option('--ethernet <Wi-Fi>', '网络设置', 'Wi-Fi');
-    option('--mock <mock/index.js>', 'mock 配置入口', 'mock/index.js');
-    option('--pageDev <page/dev.js>', '基础页面模板', 'page/dev.js');
-    option('--asset <asset>', '编译输出文件夹', 'asset');
-    option('--page <page>', '页面的编译输出文件夹', 'page');
-    option('--src <src>', '源代码所在的文件夹', 'src');
-    option('--srcPage <src/page>', '入口页面源代码所在的文件夹', 'src/page');
-    option('--favicon <src/img/favicon.ico>', 'favicon 路径', 'src/img/favicon.ico');
-    option('--hashMap <asset/hash-map.json>', '编译的 hashmap 输出路径', 'asset/hash-map.json');
+    /*
+     * option('参数表达式', '注释', '默认值');
+     */
+    option('--cdnPrefix <url>', 'CDN 前缀', 'http://demo.com');
+    option('--port <num>', '本地 mock 数据服务端口号', '8732');
+    option('--pacPort <num>', '代理服务器端口', '58732');
+    option('--devHost <host>', '线上域名，结合 pac 代理', 'demo.com');
+    option('--ethernet <str>', '网络设置', 'Wi-Fi');
+    option('--mock <path>', 'mock 配置入口', 'mock/index.js');
+    option('--pageDev <path>', '基础页面模板', 'page/dev.js');
+    option('--asset <path>', '编译输出文件夹', 'asset');
+    option('--page <path>', '页面的编译输出文件夹', 'page');
+    option('--src <path>', '源代码所在的文件夹', 'src');
+    option('--srcPage <path>', '入口页面源代码所在的文件夹', 'src/page');
+    option('--favicon <path>', 'favicon 路径', 'src/img/favicon.ico');
+    option('--hashMap <path>', '编译的 hashmap 输出路径', 'asset/hash-map.json');
     option('--webpack <on|off>', '是否开启 webpack', 'on');
     option('--pac <on|off>', '是否动设置全局 pac 代理', 'on');
     option('--liveReload <on|off>', '是否启动自动刷新页面', 'on');
-    option('--lang <babel>', '选择主语言与处理器 babel 或 typescript', 'babel');
+    option('--lang <str>', '选择主语言与处理器 babel 或 typescript', 'babel');
 
     task('default dev', '启动调试服务器和 API 代理', require('mx-fe-bone-kit/lib/dev'));
 
