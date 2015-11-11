@@ -58,20 +58,13 @@ export default (task, option) => {
         require('mx-fe-bone-kit/lib/build')
     );
 
-    task('build-js', ['copy-res'], '编译 js', (opts) => {
+    task('build-js', ['clean'], '编译 js', (opts) => {
         process.env.NODE_ENV = 'production';
         process.env['mx-fe-bone-opts'] = JSON.stringify(opts);
         return kit.spawn('webpack');
     });
 
-    task('copy-res', ['clean'], '将 src 目录中的资源文件拷贝到 asset 目录', (opts) =>
-        ['img', 'res'].map(
-            p => kit.existsSync(`${opts.src}/${p}`) &&
-                kit.copySync(`${opts.src}/${p}`, `${opts.asset}/${p}`)
-        )
-    );
-
-    task('clean', '清理缓存和 build，有任何编译报错都可以先试试它', opts =>
+    task('clean', ['lint'], '清理缓存和 build，有任何编译报错都可以先试试它', opts =>
         kit.remove(opts.asset)
     );
 
