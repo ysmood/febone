@@ -48,8 +48,8 @@ export default (task, option) => {
     option('--favicon <path>', 'favicon 路径', 'src/img/favicon.ico');
     option('--hashMap <path>', '编译的 hashmap 输出路径', 'asset/hash-map.json');
     option('--webpack <on|off>', '是否开启 webpack', 'on');
-    option('--pac <on|off>', '是否动设置全局 pac 代理', 'on');
-    option('--liveReload <on|off>', '是否启动自动刷新页面', 'on');
+    option('--pac <str>', '是否动设置全局 pac 代理: on 或 off', 'on');
+    option('--liveReload <str>', '是否启动自动刷新页面: on 或 off', 'on');
     option('--lang <str>', '选择主语言与处理器 babel 或 typescript', 'babel');
 
     task('default dev', '启动调试服务器和 API 代理', require('mx-fe-bone-kit/lib/dev'));
@@ -64,9 +64,10 @@ export default (task, option) => {
         return kit.spawn('webpack');
     });
 
-    task('copy-res', ['clean'], '将 src 目录中的资源文件拷贝到 asset 目录', async (opts) =>
-        await * ['img', 'res'].map(
-            p => kit.copy(`${opts.src}/${p}`, `${opts.asset}/${p}`).catch(kit._.noop)
+    task('copy-res', ['clean'], '将 src 目录中的资源文件拷贝到 asset 目录', (opts) =>
+        ['img', 'res'].map(
+            p => kit.existsSync(`${opts.src}/${p}`) &&
+                kit.copySync(`${opts.src}/${p}`, `${opts.asset}/${p}`)
         )
     );
 
