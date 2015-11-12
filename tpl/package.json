@@ -5,7 +5,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "no": "no"
+    "no": "no",
+    "prepublish": "no build"
   },
   "repository": {
     "type": "git",
