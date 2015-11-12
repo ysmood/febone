@@ -1,8 +1,8 @@
 export default ({ vendor, page }) =>
 
 `<!DOCTYPE html>
-<meta http-equiv=Content-Type content="text/html;charset=utf-8">
 <html>
+<meta http-equiv=Content-Type content="text/html;charset=utf-8">
 <head>
     <title>DEV</title>
 </head>
