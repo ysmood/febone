@@ -172,6 +172,7 @@ import from "style_file_path.less"
 "/img/favicon.ico?__CDN__"
 ```
 
+注意只有被标识了 `__CDN__` 的文件才会从 `src` 文件夹编译到 `asset` 文件夹。
 
 
 ## 引用资源的路径
