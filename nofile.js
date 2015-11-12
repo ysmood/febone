@@ -16,8 +16,8 @@ module.exports = function (task, option) {
     }
 
     option('--noDemo', '不创建 demo');
-
-    option('--output <' + dist + '>', '输出目录', dist);
+    option('--output <path>', '输出目录 [' + dist + ']', dist);
+    option('--lang <str>', 'demo 的语言 js 或者 typescript [js]', 'js');
 
     task('default init', ['init-repo'], '初始化项目');
 
@@ -46,13 +46,32 @@ module.exports = function (task, option) {
         var drives = kit.require('drives');
         var baseDir = kit.path.join(__dirname, 'tpl');
 
-        var list = opts.noDemo ? [
+        var list = [
             'page/**',
-            'mock/**', 'doc/**', '*'
-        ] : [
-            'src/**', 'page/**',
-            'mock/**', 'doc/**', '*'
+            'mock/**', 'doc/**',
+            'src/**/.gitkeep', 'src/layout.js',
+            'gitignore', 'nofile.js', 'package.json',
+            'readme.md', 'webpack.config.js',
+            'src/img/favicon.ico',
+            'src/style/demo.less'
         ];
+
+        var langList = {
+            typescript: [
+                'tsconfig.js',
+                'src/page/demo.ts',
+                'src/tpl/demots.ts'
+            ],
+            js: [
+                'src/page/demo.js',
+                'src/tpl/demo.js'
+            ]
+        }[opts.lang];
+
+        list = list.concat(langList);
+
+        if (opts.noDemo)
+            _.remove(list, function (p) { return p.indexOf('src/') === 0; });
 
         return kit.warp(
             list.map(function (p) { return baseDir + '/' + p; }),

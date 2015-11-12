@@ -1,5 +1,5 @@
 var kit = require('nokit');
-var testHome = kit.path.resolve('test/init-test');
+var testHome = kit.path.resolve('test/fixtures');
 var bin = kit.path.resolve('bin/index.js');
 
 function mainTest (it) {

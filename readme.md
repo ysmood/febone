@@ -12,7 +12,8 @@
 
 0. 执行 `npm i mx-fe-bone`
 
-0. 执行 `node_modules/.bin/mx-fe-bone`，请耐心等待，这个步骤会下载开发的全部基础依赖，会比较耗时
+0. 执行 `node_modules/.bin/mx-fe-bone`，请耐心等待，这个步骤会下载开发的全部基础依赖，会比较耗时。
+   如果是 typescript 项目，请执行 `node_modules/.bin/mx-fe-bone --lang typescript`。
 
 0. 阅读生成的项目的 readme.md
 
