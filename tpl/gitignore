@@ -1,6 +1,6 @@
 mock
 node_modules
-asset
+dist
 *.log
 .DS_Store
 *.db

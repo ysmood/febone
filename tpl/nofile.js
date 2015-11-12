@@ -41,12 +41,12 @@ export default (task, option) => {
     option('--ethernet <str>', '网络设置', 'Wi-Fi');
     option('--mock <path>', 'mock 配置入口', 'mock/index.js');
     option('--layout <path>', '基础页面模板', 'src/layout.js');
-    option('--asset <path>', '编译输出文件夹', 'asset');
+    option('--dist <path>', '编译输出文件夹', 'dist');
     option('--page <path>', '页面的编译输出文件夹', 'page');
     option('--src <path>', '源代码所在的文件夹', 'src');
     option('--srcPage <path>', '入口页面源代码所在的文件夹', 'src/page');
     option('--favicon <path>', 'favicon 路径', 'src/img/favicon.ico');
-    option('--hashMap <path>', '编译的 hashmap 输出路径', 'asset/hash-map.json');
+    option('--hashMap <path>', '编译的 hashmap 输出路径', 'dist/hash-map.json');
     option('--webpack <on|off>', '是否开启 webpack', 'on');
     option('--pac <str>', '是否动设置全局 pac 代理: on 或 off', 'on');
     option('--liveReload <str>', '是否启动自动刷新页面: on 或 off', 'on');
@@ -54,7 +54,7 @@ export default (task, option) => {
 
     task('default dev', '启动调试服务器和 API 代理', require('mx-fe-bone-kit/lib/dev'));
 
-    task('build', ['build-js'], '以产品模式编译项目到 asset 文件夹',
+    task('build', ['build-js'], '以产品模式编译项目到 dist 文件夹',
         require('mx-fe-bone-kit/lib/build')
     );
 
@@ -65,7 +65,7 @@ export default (task, option) => {
     });
 
     task('clean', ['lint'], '清理缓存和 build，有任何编译报错都可以先试试它', opts =>
-        kit.remove(opts.asset)
+        kit.remove(opts.dist)
     );
 
     task('lint', '检测代码风格是否符合规范', opts =>

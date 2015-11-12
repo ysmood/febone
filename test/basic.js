@@ -60,9 +60,9 @@ function mainTest (it) {
             return it('build', function () {
                 return kit.spawn('node_modules/.bin/no', ['build'], { cwd: testHome })
                 .then(function () {
-                    var hash = require(testHome + '/asset/hash-map.json');
+                    var hash = require(testHome + '/dist/hash-map.json');
                     return it.eq(
-                        kit.fileExistsSync(testHome + '/asset/' + hash['page/demo.min.js']),
+                        kit.fileExistsSync(testHome + '/dist/' + hash['page/demo.min.js']),
                         true
                     );
                 });

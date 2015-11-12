@@ -21,7 +21,7 @@
 ### 预览效果
 
 0. 非常容易执行 `node_modules/.bin/no --cdnPrefix '.' build`
-0. 用浏览器直接打开编译好的 html 页面，如 `asset/demo.html`
+0. 用浏览器直接打开编译好的 html 页面，如 `dist/demo.html`
 
 
 

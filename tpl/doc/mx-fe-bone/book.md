@@ -10,7 +10,7 @@
 ```
 目录结构
 ├── doc                  // 项目详细文档
-├── asset                // build后的文件存放位置，与src的目录结构一致
+├── dist                // build后的文件存放位置，与src的目录结构一致
 ├── mock                 // mock 相关的东西存放在这里
 ├── page                 // 脚手架搭建测试页用的模板在这里
 ├── readme.md            // 项目说明
@@ -172,7 +172,7 @@ import from "style_file_path.less"
 "/img/favicon.ico?__CDN__"
 ```
 
-注意只有被标识了 `__CDN__` 的文件才会从 `src` 文件夹编译到 `asset` 文件夹。
+注意只有被标识了 `__CDN__` 的文件才会从 `src` 文件夹编译到 `dist` 文件夹。
 
 
 ## 引用资源的路径
