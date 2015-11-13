@@ -47,7 +47,7 @@ export default (task, option) => {
     option('--srcPage <path>', '入口页面源代码所在的文件夹', 'src/page');
     option('--favicon <path>', 'favicon 路径', 'src/img/favicon.ico');
     option('--hashMap <path>', '编译的 hashmap 输出路径', 'dist/hash-map.json');
-    option('--noHash', '编译时不使用 hash 的路径');
+    option('--hashPath <on|off>', '编译时是否 hash 路径', 'on');
     option('--webpack <on|off>', '是否开启 webpack', 'on');
     option('--pac <str>', '是否动设置全局 pac 代理: on 或 off', 'on');
     option('--liveReload <str>', '是否启动自动刷新页面: on 或 off', 'on');
