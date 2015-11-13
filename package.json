@@ -1,6 +1,6 @@
 {
   "name": "mx-fe-bone",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "MX FE project scaffolding helper",
   "main": "lib/index.js",
   "bin": {
