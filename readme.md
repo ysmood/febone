@@ -26,6 +26,7 @@
 
 脚手架本身也会升级一些功能。两个步骤：
 
+0. git commit 或 stash 你当前的改动，否则后果自负！
 0. 执行 “快速上手” 中的 第 2 步，请选择想要用的版本
 0. 执行 `node_modules/.bin/mx-fe-bone update` 升级脚手架
 0. 然后用 git 对比改动，将需要的升级改动 commit 掉
