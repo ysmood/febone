@@ -20,7 +20,7 @@
 
 # API
 
-执行 `node_modules/.bin/mx-fe-bone --help`，查看全部 API。
+执行 `node_modules/.bin/mx-fe-bone --help`，查看全部命令行 API。
 
 # 脚手架升级
 

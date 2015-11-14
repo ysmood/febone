@@ -17,7 +17,7 @@ module.exports = function (task, option) {
 
     option('--noDemo', '不创建 demo');
     option('--output <path>', '输出目录 [' + dist + ']', dist);
-    option('--lang <str>', 'demo 的语言 js 或者 typescript [js]', 'js');
+    option('--lang <str>', 'demo 的预处理语言 babel 或者 typescript [babel]', 'babel');
 
     task('default init', ['init-repo'], '初始化项目');
 
@@ -62,7 +62,7 @@ module.exports = function (task, option) {
                 'src/page/demo.ts',
                 'src/tpl/demots.ts'
             ],
-            js: [
+            babel: [
                 'src/page/demo.js',
                 'src/tpl/demo.js'
             ]
