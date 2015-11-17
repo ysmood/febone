@@ -1,7 +1,11 @@
 /**
  * 这只是个示例文件，不会被版本跟踪
  *
- * 认证示例，参考auth-example.js文件
+ * 最简单的示例，参考 simple-example.js 文件
+ *
+ * 一般的 mock 示例，参考 mock-exmaple.js 文件
+ * 
+ * 认证示例，参考 auth-example.js 文件
  */
 
 import defaultRoutes from 'mx-fe-bone-kit/lib/default-routes';
