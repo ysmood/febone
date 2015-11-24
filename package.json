@@ -23,7 +23,7 @@
   "author": "mx",
   "license": "MIT",
   "dependencies": {
-    "nokit": "0.16.5"
+    "nokit": "0.16.7"
   },
   "devDependencies": {
     "junit": "0.9.1"
