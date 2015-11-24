@@ -34,7 +34,7 @@ export default (task, option) => {
     /*
      * option('参数表达式', '注释', '默认值');
      */
-    option('--cdnPrefix <url>', 'CDN 前缀', 'http://demo.com');
+    option('--cdnPrefix <url>', 'CDN 前缀，多个用逗号', 'http://c1.demo.com,http://c2.demo.com');
     option('--port <num>', '本地 mock 数据服务端口号', '8732');
     option('--pacPort <num>', '代理服务器端口', '58732');
     option('--devHost <host>', '线上域名，结合 pac 代理', 'demo.com');
