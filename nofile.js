@@ -48,7 +48,7 @@ module.exports = function (task, option) {
 
         var list = [
             'page/**',
-            'mock/**', 'doc/**',
+            'mock/**', 'doc/**', 'layout/**',
             'src/**/.gitkeep',
             'gitignore', 'nofile.js', 'package.json',
             'readme.md', 'webpack.config.js',
@@ -72,8 +72,6 @@ module.exports = function (task, option) {
 
         if (opts.noDemo)
             _.remove(list, function (p) { return p.indexOf('src/') === 0; });
-
-        list.push('src/layout.js');
 
         return kit.warp(
             list.map(function (p) { return baseDir + '/' + p; }),

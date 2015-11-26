@@ -1,0 +1,1 @@
+`mock/index.js` 文件是唯一入口点，其它的 example 文件重命名成 `index.js` 就可以演示示例。

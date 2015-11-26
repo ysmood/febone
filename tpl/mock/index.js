@@ -4,7 +4,7 @@
  * 最简单的示例，参考 simple-example.js 文件
  *
  * 一般的 mock 示例，参考 mock-exmaple.js 文件
- * 
+ *
  * 认证示例，参考 auth-example.js 文件
  */
 

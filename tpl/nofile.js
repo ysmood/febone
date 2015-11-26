@@ -40,7 +40,7 @@ export default (task, option) => {
     option('--devHost <host>', '线上域名，结合 pac 代理', 'demo.com');
     option('--ethernet <str>', '网络设置', 'Wi-Fi');
     option('--mock <path>', 'mock 配置入口', 'mock/index.js');
-    option('--layout <path>', '基础页面模板', 'src/layout.js');
+    option('--layout <path>', '页面模板文件夹', 'layout');
     option('--dist <path>', '编译输出文件夹', 'dist');
     option('--page <path>', '页面的编译输出文件夹', 'page');
     option('--src <path>', '源代码所在的文件夹', 'src');

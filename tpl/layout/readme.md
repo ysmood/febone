@@ -1,0 +1,1 @@
+如果有同名模版如 `src/page/demo.js` 和 `layout/demo.js` 则 `layout/demo.js` 会成为 `src/page/demo.js` 的模版，如果 `layout/demo.js` 不存在则默认使用 `layout/default.js` 模版。
