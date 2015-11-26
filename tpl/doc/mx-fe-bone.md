@@ -17,8 +17,19 @@
 `node_modules/.bin/no --help`
 
 
+# 脚手架升级
 
-### 路由和入口文件
+脚手架本身也会升级一些功能。两个步骤：
+
+0. git commit 或 stash 你当前的改动，否则后果自负！
+0. 执行 `npm i mx-fe-bone`
+0. 执行 `node_modules/.bin/mx-fe-bone update` 升级脚手架
+0. 然后用 git 对比改动，将需要的升级改动 commit 掉
+
+
+＃ 开发
+
+## 路由和入口文件
 
 测试服务的路由规则是 `/:name.html` 对应 `src/page/:name.js`，这里访问的 `:name.html` 是一一对应的。
 比如启动服务后访问示例的 `http://127.0.0.1:8080/demo.html` 页面，这里的 `demo` 对应的就是 `src/page/demo.js`。
@@ -26,14 +37,14 @@
 你可以在 `src/page` 文件夹里创建新的 `js` 文件，项目会自动为它生成对应的路由。
 
 
-### 预览效果
+## 预览效果
 
 0. 非常容易执行 `node_modules/.bin/no --cdnPrefix '.' build`
 0. 用浏览器直接打开编译好的 html 页面，如 `dist/demo.html`
 
 
 
-### 编译和自动刷新
+## 编译和自动刷新
 
 当你修改源代码时，源文件会被自动编译，浏览器会自动刷新。当浏览器没有及时呈现改动时，请在命令行检查下是否有语法和风格错误提示。
 
@@ -76,14 +87,14 @@
 
 ## mx-fe-bone 的依赖
 
-### [nokit](https://github.com/ysmood/nokit)
+## [nokit](https://github.com/ysmood/nokit)
 
 这个项目的核心依赖是 nokit，有任何 API 的疑惑都可以去阅读它的文档，有任何疑问或 bug 请到 Github 提交 issue。
 
 依赖列表可以在 `package.json` 的 `devDependencies` 看到，除了 nokit 以外的依赖主要都是语言编译的库，比如 babel 或 less。换句话说本项目除了编译用的依赖是非常轻量的一个系统，架构很透明都可根据标准的开源项目模式查询文档和源代码。
 
 
-### [mx-fe-bone-kit](https://github.com/ysmood/mx-fe-bone-kit)
+## [mx-fe-bone-kit](https://github.com/ysmood/mx-fe-bone-kit)
 
 这个是 mx-fe-bone 的核心库之一，主要用于抽象一些常见的业务功能。
 
