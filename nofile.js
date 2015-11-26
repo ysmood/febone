@@ -89,18 +89,6 @@ module.exports = function (task, option) {
         return kit.remove(opts.output);
     });
 
-    task('test-service', '测试机自动部署服务', function () {
-        return kit.spawn('node', ['test-service/index.js']);
-    });
-
-    task('update-stable-tag', '更新 stable tag 到当前 head', function () {
-        return kit.flow([
-            function () { return kit.spawn('git', ['push', 'origin', ':stable']).catch(_.noop); },
-            function () { return kit.spawn('git', ['tag', '-f', 'stable']); },
-            function () { return kit.spawn('git', ['push', 'origin', 'stable']); }
-        ])();
-    });
-
     task('test', '测试 mx-fe-bone 本身', function () {
         return kit.spawn('junit', ['test/basic.js', '-t', 1000 * 60 * 10]);
     });
