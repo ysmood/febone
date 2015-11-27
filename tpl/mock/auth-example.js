@@ -61,8 +61,8 @@ export default (app, opts) => {
     app.push(
         // 示例 01
         // select函数第一参数是用来匹配请求，第二个参数是处理的中间件
-        select(match('/api/increase/:num'), (ctx) => {
-            ctx.body = +ctx.url.num + 1;
+        select(match('/api/increase/:num'), ($) => {
+            $.body = +$.url.num + 1;
         }),
 
         // 示例 02
