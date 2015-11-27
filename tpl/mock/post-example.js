@@ -2,7 +2,11 @@
 
 import kit from 'nokit';
 import defaultRoutes from 'mx-fe-bone-kit/lib/default-routes';
-let { body, select, match } = kit.require('proxy');
+
+// 文档 https://www.npmjs.com/package/body-parser
+import bodyParser from 'body-parser';
+
+let { select, match, midToFlow } = kit.require('proxy');
 
 export default (app, opts) => {
     // 默认路由方式，包括页面路由、图标和静态文件的路由
@@ -10,12 +14,12 @@ export default (app, opts) => {
 
     // mock
     app.push(
-        // 将 post body 的 buffer 保存到 $.reqBody
-        body(),
+        // 把 express 的中间件转换成 noflow 的中间件
+        midToFlow(bodyParser.urlencoded()),
 
-        // 获取 json 的 post 数据，并直接返回
+        // 获取 post 直接返回
         select(match('/api/num'), ($) => {
-            $.body = JSON.parse($.reqBody + '');
+            $.body = $.req.body;
         })
     );
 };
