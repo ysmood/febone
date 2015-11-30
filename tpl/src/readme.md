@@ -28,29 +28,6 @@ config.devtool = '#eval';
 如果你想配置规范请修改 `package.json` 中的 `eslintConfig` 部分。
 
 
-### 关于 polyfill
-
-一些 ES6、ES7 语言特性的实现，需要 `polyfill`，开发者在打包的时候，需要在入口 js 文件添加依赖。
-
-例如使用 `async` 语法，在入口 js 文件，加入如下引用：
-
-```js
-import from "babel-runtime/regenerator";
-```
-
-也可以偷懒直接引用全部的 polyfill
-
-```js
-import from "babel/polyfill"
-```
-
-但是引入的文件会稍大，需要考量具体业务场景。
-
-了解 ES6、ES7 语言特性在 babel 编译时，哪些需要使用 polyfill，可以查看网站 [babel-learn-es2015](babel-learn-es2015)
-
-
-
-
 ## 如何使用模板
 
 默认我们不是用任何三方库，直接使用 ES6 的原生模板。当然你也可使用任何其他的模版系统，
