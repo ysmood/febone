@@ -1,5 +1,5 @@
 var kit = require('nokit');
-var testHome = kit.path.resolve('test/fixtures');
+var testHome = kit.path.resolve('test/fixtures-typescript');
 var bin = kit.path.resolve('bin/index.js');
 
 function mainTest (it) {
@@ -14,7 +14,7 @@ function mainTest (it) {
             });
         })({
             redirect: 3,
-            url: 'http://127.0.0.1:8732' + url
+            url: 'http://127.0.0.1:8733' + url
         });
     }
 
@@ -24,19 +24,19 @@ function mainTest (it) {
             return request('/', '</html>');
         }),
 
-        it('webpack js', function () {
-            return request('/page/demo.js', 'Babel');
+        it('webpack ts', function () {
+            return request('/page/demo.js', 'Typescript');
         }).then(function () {
-            return it('auto recompile js', function (after) {
+            return it('auto recompile ts', function (after) {
                 var time = Date.now();
-                var js = testHome + '/src/tpl/demo.js';
-                var str = kit.readFileSync(js);
+                var ts = testHome + '/src/tpl/demots.ts';
+                var str = kit.readFileSync(ts);
                 kit.outputFileSync(
-                    js,
+                    ts,
                     str + '\nconsole.log("' + time + '");'
                 );
                 after(function () {
-                    return kit.outputFileSync(js, str);
+                    return kit.outputFileSync(ts, str);
                 });
                 return request('/page/demo.js', time);
             });
@@ -58,7 +58,7 @@ function mainTest (it) {
             });
         }).then(function () {
             return it('build', function () {
-                return kit.spawn('node_modules/.bin/no', ['build'], { cwd: testHome })
+                return kit.spawn('node_modules/.bin/no', ['build', '--lang', 'typescript'], { cwd: testHome })
                 .then(function () {
                     var hash = require(testHome + '/dist/hash-map.json');
                     return it.eq(
@@ -77,16 +77,19 @@ function init () {
         kit.mkdirsSync(testHome);
     } catch (err) { null; }
 
-    return kit.spawn(bin, [], { cwd: testHome })
+    return kit.spawn(bin, ['--lang', 'typescript'], { cwd: testHome })
     .then(function () {
         serverProcess = kit.spawn(
-            'node_modules/.bin/no', ['--pac', 'off'], { cwd: testHome }
+            'node_modules/.bin/no', [
+                '--port', '8733', '--pacPort', '58733',
+                '--pac', 'off', '--lang', 'typescript'
+            ], { cwd: testHome }
         ).process;
     });
 }
 
 module.exports = function (it) {
-    return it.describe('basic', function (it) {
+    return it.describe('typescript', function (it) {
         return init()
         .then(function () {
             return mainTest(it);

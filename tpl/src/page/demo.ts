@@ -1,5 +1,5 @@
-require('../style/demo.less');
+import '../style/demo.less';
 
-import demo = require('../tpl/demots');
+import demo from '../tpl/demots';
 
-document.body.innerHTML = demo('Hello World, Typescript!');
+document.body.innerHTML = demo('Hello Typescript!');

@@ -58,7 +58,7 @@ module.exports = function (task, option) {
 
         var langList = {
             typescript: [
-                'tsconfig.js',
+                'tsconfig.json',
                 'src/page/demo.ts',
                 'src/tpl/demots.ts'
             ],
@@ -90,7 +90,7 @@ module.exports = function (task, option) {
     });
 
     task('test', '测试 mx-fe-bone 本身', function () {
-        return kit.spawn('junit', ['test/basic.js', '-t', 1000 * 60 * 10]);
+        return kit.spawn('junit', ['test/*.js', '-t', 1000 * 60 * 10]);
     });
 
 };

@@ -3,3 +3,4 @@ dist
 *.sublime-*
 npm-debug.log
 test/fixtures
+test/fixtures-typescript

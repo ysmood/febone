@@ -1,3 +1,2 @@
-export = function (content: String) {
-    return `<div class="demo">${content}</div>`;
-}
+export default (content: String) =>
+    `<div class="demo">${content}</div>`;
