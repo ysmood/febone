@@ -74,4 +74,6 @@ export default (task, option) => {
     );
 
     task('pac-off', '关闭 pac 代理配置', require('mx-fe-bone-kit/lib/pac-set').off);
+
+    task('update-bone', '升级脚手架', require('mx-fe-bone-kit/lib/update-bone'));
 };
