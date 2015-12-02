@@ -2,7 +2,7 @@ import kit from 'nokit';
 
 /**
  * option 收录了 no 命令主要的参数。函数 option 接收三个参数，最后一个是默认值。
- * 例如，启动时修改基础模板页配置，no --pageDev "page/my.js".
+ * 例如，启动时修改基础模板页配置：`no --port 12345`.
  *
  * 请阅读每个 option 配置，具体说明几个配置。
  *
