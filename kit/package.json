@@ -1,0 +1,70 @@
+{
+  "name": "mx-fe-bone-kit",
+  "description": "the kit of mx-fe-bone",
+  "author": "mx",
+  "version": "0.6.16",
+  "scripts": {
+    "no": "no",
+    "test": "no test",
+    "prepublish": "no build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.sankuai.com/mx/mx-fe-bone-kit.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "babel-runtime": "5.8.29",
+    "nokit": "0.16.8",
+    "path-to-regexp": "1.2.1",
+    "send": "0.13.0"
+  },
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "babel": "5.8.29",
+    "babel-core": "5.8.33",
+    "babel-eslint": "4.1.3",
+    "eslint": "1.7.3",
+    "junit": "0.9.1",
+    "webpack": "1.12.2"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "rules": {
+      "indent": [
+        2,
+        4
+      ],
+      "quotes": [
+        2,
+        "single"
+      ],
+      "linebreak-style": [
+        2,
+        "unix"
+      ],
+      "semi": [
+        2,
+        "always"
+      ],
+      "no-trailing-spaces": 2,
+      "space-before-function-paren": [
+        2,
+        "always"
+      ],
+      "eqeqeq": [
+        2,
+        "allow-null"
+      ],
+      "no-console": 0,
+      "no-debugger": 0
+    },
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "extends": "eslint:recommended"
+  }
+}
