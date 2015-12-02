@@ -57,7 +57,7 @@ function mainTest (it) {
             });
         }).then(function () {
             return it('build', function () {
-                return kit.spawn('node_modules/.bin/no', ['build', '--lang', 'typescript'], { cwd: testHome })
+                return kit.spawn('node_modules/.bin/no', ['build'], { cwd: testHome })
                 .then(function () {
                     var hash = require(testHome + '/dist/hash-map.json');
                     return it.eq(
@@ -81,7 +81,7 @@ function init () {
         serverProcess = kit.spawn(
             'node_modules/.bin/no', [
                 '--port', '8733', '--pacPort', '58733',
-                '--pac', 'off', '--lang', 'typescript'
+                '--pac', 'off'
             ], { cwd: testHome }
         ).process;
     });

@@ -84,6 +84,13 @@ module.exports = function (task, option) {
         })
         .run(opts.output)
         .then(function () {
+            var p = opts.output + '/nofile.js';
+            kit.warp(p).load(function (f) {
+                var reg = /(option\(.+')(babel)('\))/;
+                f.set(f.contents.replace(reg, '$1' + opts.lang + '$3'));
+            }).run(opts.output);
+        })
+        .then(function () {
             if (process.env['mx-fe-bone-dev'] === 'test') {
                 var p = opts.output + '/package.json';
                 return kit.readJson(p)
