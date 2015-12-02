@@ -2,9 +2,6 @@
 
 它的唯一对外接口是 `src/public-config.js`。
 
-[![NPM version](https://badge.fury.io/js/mx-fe-bone-kit.svg)](http://badge.fury.io/js/mx-fe-bone-kit) [![Build Status](https://travis-ci.org/ysmood/mx-fe-bone-kit.svg)](https://travis-ci.org/ysmood/mx-fe-bone-kit) [![Deps Up to Date](https://david-dm.org/ysmood/mx-fe-bone-kit.svg?style=flat)](https://david-dm.org/ysmood/mx-fe-bone-kit)
-
-
 ## API
 
 整个项目共享一个 options 对象：
