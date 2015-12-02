@@ -30,7 +30,7 @@
     "path-to-regexp": "1.2.1",
     "send": "0.13.0",
     "style-loader": "0.13.0",
-    "typescript": "1.6.2",
+    "typescript": "1.7.3",
     "ts-loader": "0.7.2",
     "webpack": "1.12.2"
   },
