@@ -2,7 +2,7 @@
   "name": "mx-fe-bone-kit",
   "description": "the kit of mx-fe-bone",
   "author": "mx",
-  "version": "0.6.17",
+  "version": "0.6.18",
   "scripts": {
     "no": "no",
     "test": "no test",
@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "5.8.29",
-    "nokit": "0.16.8",
+    "nokit": "0.16.10",
     "path-to-regexp": "1.2.1",
     "send": "0.13.0"
   },
