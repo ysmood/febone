@@ -82,7 +82,17 @@ module.exports = function (task, option) {
             if (f.dest + '' === 'gitignore')
                 f.dest = '.gitignore';
         })
-        .run(opts.output);
+        .run(opts.output)
+        .then(function () {
+            if (process.env['mx-fe-bone-dev'] === 'test') {
+                var p = opts.output + '/package.json';
+                return kit.readJson(p)
+                .then(function (info) {
+                    info.devDependencies['mx-fe-bone-kit'] = '../../kit';
+                    return kit.outputJson(p, info, { space: 2 });
+                });
+            }
+        });
     });
 
     task('clean', '清理项目', function (opts) {
@@ -90,6 +100,7 @@ module.exports = function (task, option) {
     });
 
     task('test', '测试 mx-fe-bone 本身', function () {
+        process.env['mx-fe-bone-dev'] = 'test';
         return kit.spawn('junit', ['test/*.js', '-t', 1000 * 60 * 10]);
     });
 

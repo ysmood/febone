@@ -14,7 +14,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "mx-fe-bone-kit": "0.6.15",
     "babel": "5.8.23",
     "babel-core": "5.8.25",
     "babel-runtime": "5.8.29",
@@ -25,6 +24,7 @@
     "eslint-loader": "1.1.0",
     "less": "2.5.3",
     "less-loader": "2.2.1",
+    "mx-fe-bone-kit": "0.6.15",
     "node-libs-browser": "0.5.3",
     "nokit": "0.16.8",
     "path-to-regexp": "1.2.1",

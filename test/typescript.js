@@ -1,6 +1,5 @@
 var kit = require('nokit');
 var testHome = kit.path.resolve('test/fixtures-typescript');
-var bin = kit.path.resolve('bin/index.js');
 
 function mainTest (it) {
 
@@ -77,7 +76,7 @@ function init () {
         kit.mkdirsSync(testHome);
     } catch (err) { null; }
 
-    return kit.spawn(bin, ['--lang', 'typescript'], { cwd: testHome })
+    return kit.spawn(kit.path.resolve('bin/index.js'), ['--lang', 'typescript'], { cwd: testHome })
     .then(function () {
         serverProcess = kit.spawn(
             'node_modules/.bin/no', [
