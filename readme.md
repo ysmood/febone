@@ -24,9 +24,4 @@
 
 # 脚手架升级
 
-脚手架本身也会升级一些功能。两个步骤：
-
-0. git commit 或 stash 你当前的改动，否则后果自负！
-0. 执行 `npm i mx-fe-bone`
-0. 执行 `node_modules/.bin/mx-fe-bone update` 升级脚手架
-0. 然后用 git 对比改动，将需要的升级改动 commit 掉
+在项目文件夹执行 `node_modules/.bin/no update-bone`。
