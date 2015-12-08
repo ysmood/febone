@@ -100,5 +100,10 @@
   > 你可以将 `nokit` 安装到全局： `npm install -g nokit`，你以后就只用输入类似 `no --help` 这样的短命了就行了。
   > 当然你还需要全局安装 babel 来支持 ES7： `npm install -g babel`。
 
+- 我怎么把当前库当成一个 npm package 呢？
+
+  很简单，在 nofile 里把 `src` 的路径改成 `test`，自己创建一个空 `src` 文件夹，然后利用 `babel` 编译 `src` 到 `lib` 即可，
+  发布的时候只发布 `lib` 文件夹。
+
 
 [babel-learn-es2015]: https://babeljs.io/docs/learn-es2015
