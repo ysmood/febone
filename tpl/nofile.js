@@ -65,7 +65,7 @@ export default (task, option) => {
         return kit.spawn('webpack');
     });
 
-    task('clean', ['lint'], '清理缓存和 build，有任何编译报错都可以先试试它', opts =>
+    task('clean', '清理缓存和 build，有任何编译报错都可以先试试它', opts =>
         kit.remove(opts.dist)
     );
 
