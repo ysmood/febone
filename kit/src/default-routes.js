@@ -64,6 +64,10 @@ export default (app, opts) => {
         let src = opts.src + '/' + path;
         let dist = opts.dist + '/' + path;
 
+        if (kit.path.extname(path) === '.' + srcExt) {
+            return $.next();
+        }
+
         if (await kit.fileExists(src)) {
             if (await kit.fileExists(dist)) {
                 let { mtime: srcTime } = await kit.stat(src);
