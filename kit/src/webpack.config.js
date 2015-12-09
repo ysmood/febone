@@ -46,6 +46,10 @@ let self = {
     module: {
         loaders: [
             {
+                test: /\.css$/,
+                loader: 'style!css'
+            },
+            {
                 test: /\.less$/,
                 loader: 'style!css!less'
             },
