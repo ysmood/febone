@@ -13,6 +13,9 @@ export default async () => {
         let target = `${name}@${ver}`;
         try {
             let { version } = await kit.readJson(`${cwd}/node_modules/${name}/package.json`);
+
+            if (!semver.valid(ver)) return;
+
             if (!semver.satisfies(version, ver)) {
                 kit.logs(
                     br.cyan('update dependency:'),
