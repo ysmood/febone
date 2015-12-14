@@ -1,9 +1,11 @@
 export default {
-    cdnPrefix: 'http://demo.com',
     port: '8732',
     pacPort: '58732',
+    pac: 'off',
     devHost: 'demo.com',
     ethernet: 'Wi-Fi',
+
+    cdnPrefix: 'http://demo.com',
     mock: 'mock/index.js',
     layout: 'src/layout.js',
     dist: 'dist',
@@ -14,7 +16,6 @@ export default {
     hashPath: 'on',
     hashMap: 'dist/hash-map.json',
     webpack: 'off',
-    pac: 'off',
     liveReload: 'on',
     lang: 'babel'
 };

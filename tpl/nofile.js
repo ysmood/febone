@@ -34,11 +34,13 @@ export default (task, option) => {
     /*
      * option('参数表达式', '注释', '默认值');
      */
-    option('--cdnPrefix <url>', 'CDN 前缀，多个用逗号', 'http://c1.demo.com,http://c2.demo.com');
     option('--port <num>', '本地 mock 数据服务端口号', '8732');
-    option('--pacPort <num>', '代理服务器端口', '58732');
     option('--devHost <host>', '线上域名，结合 pac 代理', 'demo.com');
+    option('--pacPort <num>', '代理服务器端口', '58732');
+    option('--pac <str>', '是否动设置全局 pac 代理: on 或 off', 'on');
     option('--ethernet <str>', '网络设置', 'Wi-Fi');
+
+    option('--cdnPrefix <url>', 'CDN 前缀，多个用逗号', 'http://c1.demo.com,http://c2.demo.com');
     option('--mock <path>', 'mock 配置入口', 'mock/index.js');
     option('--layout <path>', '页面模板文件夹', 'layout');
     option('--dist <path>', '编译输出文件夹', 'dist');
@@ -48,10 +50,9 @@ export default (task, option) => {
     option('--favicon <path>', 'favicon 路径', 'src/img/favicon.ico');
     option('--hashMap <path>', '编译的 hashmap 输出路径', 'dist/hash-map.json');
     option('--hashPath <on|off>', '编译时是否 hash 路径', 'on');
-    option('--webpack <on|off>', '是否开启 webpack', 'on');
-    option('--pac <str>', '是否动设置全局 pac 代理: on 或 off', 'on');
-    option('--liveReload <str>', '是否启动自动刷新页面: on 或 off', 'on');
     option('--lang <str>', '选择主语言与处理器 babel 或 typescript', 'babel');
+    option('--webpack <on|off>', '是否开启 webpack', 'on');
+    option('--liveReload <str>', '是否启动自动刷新页面: on 或 off', 'on');
 
     task('default dev', '启动调试服务器和 API 代理', require('mx-fe-bone-kit/lib/dev'));
 
