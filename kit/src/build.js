@@ -17,6 +17,7 @@ export default async (opts = {}) => {
     let cdnPrefix = ((cdns) => () => _.sample(cdns))(opts.cdnPrefix.split(','));
     let drives = kit.require('drives');
     let hashMapStore = {};
+    let preloadjs = '(function () { function f (p) { (new Image()).src = p; } ';
     let hashMap = function (key, value) {
         if (arguments.length === 2) {
             hashMapStore[key] = value;
@@ -48,6 +49,7 @@ export default async (opts = {}) => {
 
             kit.outputFileSync(opts.dist + hashMap(p.pathname), buf);
 
+            preloadjs += `f('${hashMap(p.pathname)}');`;
             p.pathname = cdnPrefix() + hashMap(p.pathname);
             kit.logs(br.cyan('cdn:'), p.pathname);
             p = kit.url.format(p);
@@ -82,5 +84,6 @@ export default async (opts = {}) => {
         return kit.outputFile(`${opts.dist}/${name}.html`, tpl);
     });
 
+    await kit.outputFile(opts.preload, preloadjs + ' })();');
     await kit.outputJson(opts.hashMap, hashMapStore);
 };

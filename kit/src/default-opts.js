@@ -15,6 +15,7 @@ export default {
     favicon: 'src/img/favicon.ico',
     hashPath: 'on',
     hashMap: 'dist/hash-map.json',
+    preload: 'dist/preload.js',
     webpack: 'off',
     liveReload: 'on',
     lang: 'babel'

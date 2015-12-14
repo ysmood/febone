@@ -49,6 +49,7 @@ export default (task, option) => {
     option('--srcPage <path>', '入口页面源代码所在的文件夹', 'src/page');
     option('--favicon <path>', 'favicon 路径', 'src/img/favicon.ico');
     option('--hashMap <path>', '编译的 hashmap 输出路径', 'dist/hash-map.json');
+    option('--preload <path>', '编译出的图片预载器文件路径', 'dist/preload.js');
     option('--hashPath <on|off>', '编译时是否 hash 路径', 'on');
     option('--lang <str>', '选择主语言与处理器 babel 或 typescript', 'babel');
     option('--webpack <on|off>', '是否开启 webpack', 'on');
