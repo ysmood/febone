@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "5.8.29",
-    "nokit": "0.16.15",
+    "nokit": "0.16.17",
     "path-to-regexp": "1.2.1",
     "send": "0.13.0"
   },
