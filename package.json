@@ -1,6 +1,6 @@
 {
   "name": "mx-fe-bone",
-  "version": "0.5.24",
+  "version": "0.5.25",
   "description": "MX FE project scaffolding helper",
   "main": "lib/index.js",
   "bin": {
@@ -25,7 +25,7 @@
   "author": "mx",
   "license": "MIT",
   "dependencies": {
-    "nokit": "0.16.16"
+    "nokit": "0.17.0"
   },
   "devDependencies": {
     "junit": "1.1.1"
