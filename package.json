@@ -15,7 +15,9 @@
     "test": "no test"
   },
   "files": [
-    "tpl", "bin", "nofile.js"
+    "tpl",
+    "bin",
+    "nofile.js"
   ],
   "keywords": [
     "scaffolding"
@@ -23,10 +25,10 @@
   "author": "mx",
   "license": "MIT",
   "dependencies": {
-    "nokit": "0.16.13"
+    "nokit": "0.16.16"
   },
   "devDependencies": {
-    "junit": "0.9.1"
+    "junit": "1.1.1"
   },
   "eslintConfig": {
     "rules": {

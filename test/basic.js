@@ -64,6 +64,14 @@ function mainTest (it) {
                         kit.fileExistsSync(testHome + '/dist/' + hash['page/demo.min.js']),
                         true
                     );
+                })
+                .then(function () {
+                    var preload = kit.readFile(testHome + '/dist/preload.js', 'utf8')
+                    .then(function (js) {
+                        return js.match(/img\/favicon\..+\.(ico)/)[1];
+                    });
+
+                    return it.eq(preload, 'ico');
                 });
             });
         })
