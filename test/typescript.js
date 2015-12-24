@@ -64,6 +64,8 @@ function mainTest (it) {
                         kit.fileExistsSync(testHome + '/dist/' + hash['page/demo.min.js']),
                         true
                     );
+                }).then(function () {
+                    return it.eq(kit.fileExists(testHome + '/dist/demo.html'), true);
                 });
             });
         })

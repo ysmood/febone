@@ -11,6 +11,11 @@ jhash.setSymbols('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
 export default async (opts = {}) => {
     opts = _.defaults(opts, defaultOpts);
 
+    let srcExt = {
+        babel: 'js',
+        typescript: 'ts'
+    }[opts.lang];
+
     kit.require('url');
 
     let regCDN = /(\\?['"\(])([^'"\(]+?__CDN__[^'"\)]*?)(\\?['"\)])/g;
@@ -74,9 +79,9 @@ export default async (opts = {}) => {
     .run(opts.dist);
 
     // 编译出基础页面到 dist 目录
-    let list = await kit.glob(`${opts.srcPage}/**/*.js`);
+    let list = await kit.glob(`${opts.srcPage}/**/*.${srcExt}`);
     await * list.map(async (path) => {
-        let name = kit.path.relative(opts.srcPage,path).replace(/\.js$/, '');
+        let name = _.trimRight(kit.path.relative(opts.srcPage,path), `.${srcExt}`);
         let tpl = require(await utils.getLayout(opts, name))({
             vendor: cdnPrefix() + '/' + hashMap(`${opts.page}/vendor.min.js`),
             page: cdnPrefix() + '/' + hashMap(`${opts.page}/${name}.min.js`)
