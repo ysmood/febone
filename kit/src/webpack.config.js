@@ -2,7 +2,6 @@ import webpack from 'webpack';
 import kit from 'nokit';
 
 
-let isProduction = process.env.NODE_ENV === 'production';
 let { _ } = kit;
 let opts = JSON.parse(process.env['mx-fe-bone-opts']);
 let srcExt = { babel: '.js', 'typescript': '.ts' }[opts.lang];
@@ -29,13 +28,12 @@ let self = {
     plugins: [
         new webpack.optimize.CommonsChunkPlugin(
             'vendor',
-            isProduction ? 'vendor.min.js' : 'vendor.js'
-        ),
-        require('./webpack-notifier')()
+            opts.isWebpackProduction ? 'vendor.min.js' : 'vendor.js'
+        )
     ],
 
     output: {
-        filename: isProduction ? '[name].min.js' : '[name].js',
+        filename: opts.isWebpackProduction ? '[name].min.js' : '[name].js',
         path: kit.path.join(opts.dist, opts.page)
     },
 
@@ -68,7 +66,7 @@ let self = {
     }
 };
 
-if (isProduction) {
+if (opts.isWebpackProduction) {
 
     self.plugins.push(new webpack.optimize.UglifyJsPlugin());
 
@@ -85,6 +83,8 @@ if (isProduction) {
     };
 
 } else {
+
+    self.plugins.push(require('./webpack-notifier')());
 
     self.output.pathinfo = true;
     self.debug = true;
