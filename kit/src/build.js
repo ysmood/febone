@@ -54,7 +54,7 @@ export default async (opts = {}) => {
 
             kit.outputFileSync(opts.dist + hashMap(p.pathname), buf);
 
-            preloadjs += `f('${hashMap(p.pathname)}');`;
+            preloadjs += `f('${cdnPrefix()}${hashMap(p.pathname)}');`;
             p.pathname = cdnPrefix() + hashMap(p.pathname);
             kit.logs(br.cyan('cdn:'), p.pathname);
             p = kit.url.format(p);
