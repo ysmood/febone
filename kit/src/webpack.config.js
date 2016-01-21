@@ -29,7 +29,8 @@ let self = {
         new webpack.optimize.CommonsChunkPlugin(
             'vendor',
             opts.isWebpackProduction ? 'vendor.min.js' : 'vendor.js'
-        )
+        ),
+        require('./webpack-notifier')()
     ],
 
     output: {
@@ -83,8 +84,6 @@ if (opts.isWebpackProduction) {
     };
 
 } else {
-
-    self.plugins.push(require('./webpack-notifier')());
 
     self.output.pathinfo = true;
     self.debug = true;
