@@ -35,14 +35,20 @@ export default async (opts = {}) => {
     };
 
     // 将 js 文件中的带有 __CDN__ 的路径替换成 cdn 前缀和 hash 值
-    let compileRes = (contents) => {
-        return contents.replace(regCDN, (m, left, p, right) => {
+    let compileRes = (str, path) =>
+        kit.replace(str, regCDN, async (m, left, p, right) => {
             p = kit.url.parse(p, true);
             delete p.search;
             delete p.query.__CDN__; // eslint-disable-line
 
             // copy 并获取 hash 值
-            let buf = kit.readFileSync(opts.src + p.pathname);
+            let buf;
+            try {
+                buf = await kit.readFile(opts.src + p.pathname);
+            } catch (err) {
+                throw new Error(br.red(`${path} 中的 __CDN__ 配置有误： ${err.message}`));
+            }
+
             let ext = kit.path.extname(p.pathname);
             hashMap(
                 p.pathname,
@@ -52,7 +58,7 @@ export default async (opts = {}) => {
                 ext
             );
 
-            kit.outputFileSync(opts.dist + hashMap(p.pathname), buf);
+            await kit.outputFile(opts.dist + hashMap(p.pathname), buf);
 
             preloadjs += `f('${cdnPrefix()}${hashMap(p.pathname)}');`;
             p.pathname = cdnPrefix() + hashMap(p.pathname);
@@ -60,7 +66,6 @@ export default async (opts = {}) => {
             p = kit.url.format(p);
             return left + p + right;
         });
-    };
 
     await kit.warp(`${opts.dist}/**/*.js`)
     .load(drives.reader({ isCache: false }))
@@ -74,7 +79,7 @@ export default async (opts = {}) => {
         hashMap(src, kit.path.relative(opts.dist, f.dest + ''));
         f.dest = opts.dist + '/' + hashMap(src);
 
-        f.set(compileRes(f.contents));
+        f.set(await compileRes(f.contents, f.path));
     })
     .run(opts.dist);
 
@@ -82,17 +87,18 @@ export default async (opts = {}) => {
     let list = await kit.glob(`${opts.srcPage}/**/*.${srcExt}`);
     await * list.map(async (path) => {
         let name = _.trimRight(kit.path.relative(opts.srcPage,path), `.${srcExt}`);
-        let tpl = require(await utils.getLayout(opts, name))({
+        let modPath = await utils.getLayout(opts, name);
+        let tpl = require(modPath)({
             vendor: utils.joinUrl(
                 cdnPrefix(),
-                hashMap(utils.joinUrl(opts.page, 'vendor.min.js'))
+                hashMap(utils.joinUrl(opts.page, 'vendor.js'))
             ),
             page: utils.joinUrl(
                 cdnPrefix(),
-                hashMap(utils.joinUrl(opts.page, `${name}.min.js`))
+                hashMap(utils.joinUrl(opts.page, `${name}.js`))
             )
         });
-        return kit.outputFile(`${opts.dist}/${name}.html`, tpl);
+        return kit.outputFile(`${opts.dist}/${name}.html`, await compileRes(tpl, modPath));
     });
 
     await kit.outputFile(opts.preload, preloadjs + ' })();');
