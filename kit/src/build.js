@@ -83,8 +83,14 @@ export default async (opts = {}) => {
     await * list.map(async (path) => {
         let name = _.trimRight(kit.path.relative(opts.srcPage,path), `.${srcExt}`);
         let tpl = require(await utils.getLayout(opts, name))({
-            vendor: cdnPrefix() + '/' + hashMap(`${opts.page}/vendor.min.js`),
-            page: cdnPrefix() + '/' + hashMap(`${opts.page}/${name}.min.js`)
+            vendor: utils.joinUrl(
+                cdnPrefix(),
+                hashMap(utils.joinUrl(opts.page, 'vendor.min.js'))
+            ),
+            page: utils.joinUrl(
+                cdnPrefix(),
+                hashMap(utils.joinUrl(opts.page, `${name}.min.js`))
+            )
         });
         return kit.outputFile(`${opts.dist}/${name}.html`, tpl);
     });

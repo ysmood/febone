@@ -40,22 +40,22 @@ export default (app, opts) => {
         if (_.endsWith(name, '.html'))
             name = name.replace(/\.html$/, '');
         else
-            name += '/index';
+            name = utils.joinUrl(name, 'index');
 
         if (!await kit.fileExists(`${opts.srcPage}/${name}.${srcExt}`)) {
             return $.next();
         }
 
         let tpl = require(await utils.getLayout(opts, name))({
-            vendor: `/${opts.page}/vendor.js`,
-            page: `/${opts.page}/${name}.js`
+            vendor: utils.joinUrl('/', opts.page, 'vendor.js'),
+            page: utils.joinUrl('/', opts.page, `${name}.js`)
         });
 
         $.res.setHeader('Content-Type', 'text/html; charset=utf-8');
         $.body = tpl;
 
         // 输出 html 文件
-        kit.outputFile(`${opts.dist}/${name}.html`, tpl);
+        kit.outputFile(utils.joinUrl(opts.dist, `${name}.html`), tpl);
 
         // 插入自动重载等工具函数到页面
         if (opts.liveReload === 'on')
