@@ -6,6 +6,7 @@ export default {
     ethernet: 'Wi-Fi',
 
     cdnPrefix: 'http://demo.com',
+    prefix: '/',
     mock: 'mock/index.js',
     layout: 'src/layout.js',
     dist: 'dist',

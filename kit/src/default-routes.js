@@ -26,7 +26,7 @@ export default (app, opts) => {
         if(!await kit.exists(`${opts.srcPage}/demo.${srcExt}`))
             return $.next();
 
-        $.res.setHeader('Location', '/demo.html');
+        $.res.setHeader('Location', utils.joinUrl(opts.prefix, 'demo.html'));
         $.res.statusCode = 302;
     }));
 
@@ -35,7 +35,8 @@ export default (app, opts) => {
 
     // 入口页面路由
     app.push(async $ => {
-        let name = kit.url.parse($.req.url).pathname;
+        let url = '/' + $.req.url.replace(opts.prefix, '');
+        let name = kit.url.parse(url).pathname;
 
         if (_.endsWith(name, '.html'))
             name = name.replace(/\.html$/, '');
@@ -47,8 +48,8 @@ export default (app, opts) => {
         }
 
         let tpl = require(await utils.getLayout(opts, name))({
-            vendor: utils.joinUrl('/', opts.page, 'vendor.js'),
-            page: utils.joinUrl('/', opts.page, `${name}.js`)
+            vendor: utils.joinUrl(opts.prefix, opts.page, 'vendor.js'),
+            page: utils.joinUrl(opts.prefix, opts.page, `${name}.js`)
         });
 
         $.res.setHeader('Content-Type', 'text/html; charset=utf-8');
@@ -63,7 +64,7 @@ export default (app, opts) => {
     });
 
     // 如果 src 里的文件新一些就将其复制到 dist
-    app.push(select(`/`, async $ => {
+    app.push(select(opts.prefix, async $ => {
         let url = $.url;
 
         let query = url.indexOf('?');
@@ -91,7 +92,7 @@ export default (app, opts) => {
     }));
 
     // 将 dist 文件夹作为静态文件夹
-    app.push(select('/', proxy.static({
+    app.push(select(opts.prefix, proxy.static({
         root: opts.dist,
         onFile: (p) => serverHelper.watch(kit.path.relative(cwd, p))
     })));

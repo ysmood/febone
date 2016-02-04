@@ -41,6 +41,7 @@ export default (task, option) => {
     option('--ethernet <str>', '网络设置', 'Wi-Fi');
 
     option('--cdnPrefix <url>', 'CDN 前缀，多个用逗号', 'http://c1.demo.com,http://c2.demo.com');
+    option('--prefix <url>', '资源 url 前缀', '/');
     option('--mock <path>', 'mock 配置入口', 'mock/index.js');
     option('--layout <path>', '页面模板文件夹', 'layout');
     option('--dist <path>', '编译输出文件夹', 'dist');

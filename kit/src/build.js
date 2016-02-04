@@ -52,6 +52,7 @@ export default async (opts = {}) => {
             let ext = kit.path.extname(p.pathname);
             hashMap(
                 p.pathname,
+                opts.prefix
                 kit.path.dirname(p.pathname) +
                 '/' + kit.path.basename(p.pathname, ext) +
                 '.' + jhash.hash(buf) +
