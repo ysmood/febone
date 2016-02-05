@@ -61,7 +61,7 @@ function mainTest (it) {
                 .then(function () {
                     var hash = require(testHome + '/dist/hash-map.json');
                     return it.eq(
-                        kit.fileExistsSync(testHome + '/dist/' + hash['page/demo.min.js']),
+                        kit.fileExistsSync(testHome + '/dist/' + hash['page/demo.js']),
                         true
                     );
                 }).then(function () {
