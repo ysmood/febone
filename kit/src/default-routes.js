@@ -1,5 +1,6 @@
 import kit from 'nokit';
 import utils from './utils';
+import vaneMock from 'vane/lib/mock';
 
 kit.require('url');
 let { _ } = kit;
@@ -20,6 +21,9 @@ export default (app, opts) => {
         utils.accessLog('access:'),
         serverHelper
     );
+
+    // vane mock
+    app.push(vaneMock({ token: opts.vaneToken }));
 
     // 默认路由服务
     app.push(select(/^\/$/, async $ => {

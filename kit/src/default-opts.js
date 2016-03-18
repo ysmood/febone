@@ -7,6 +7,7 @@ export default {
 
     cdnPrefix: 'http://demo.com',
     mock: 'mock/index.js',
+    vaneToken: 'mock',
     layout: 'src/layout.js',
     dist: 'dist',
     page: 'page',

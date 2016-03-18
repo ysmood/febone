@@ -17,7 +17,8 @@
     "babel-runtime": "5.8.29",
     "nokit": "0.19.1",
     "path-to-regexp": "1.2.1",
-    "send": "0.13.0"
+    "send": "0.13.0",
+    "vane": "0.2.0"
   },
   "files": [
     "lib"
