@@ -22,9 +22,9 @@ export default {
         for (let p of arguments) {
             if (isFirst) {
                 isFirst = false;
-                ret += _.trimRight(p, '/');
+                ret += _.trimEnd(p, '/');
             } else {
-                ret += '/' + _.trimLeft(p, '/');
+                ret += '/' + _.trimStart(p, '/');
             }
         }
         return ret;

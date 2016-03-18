@@ -26,7 +26,7 @@
     "less-loader": "2.2.1",
     "mx-fe-bone-kit": "0.6.27",
     "node-libs-browser": "0.5.3",
-    "nokit": "0.17.2",
+    "nokit": "0.19.1",
     "path-to-regexp": "1.2.1",
     "send": "0.13.0",
     "style-loader": "0.13.0",

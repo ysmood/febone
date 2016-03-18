@@ -1,3 +1,5 @@
+// nofile-pre-require: babel-core/register
+
 import kit from 'nokit';
 
 export default (task) => {

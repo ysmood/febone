@@ -86,7 +86,7 @@ export default async (opts = {}) => {
     // 编译出基础页面到 dist 目录
     let list = await kit.glob(`${opts.srcPage}/**/*.${srcExt}`);
     await * list.map(async (path) => {
-        let name = _.trimRight(kit.path.relative(opts.srcPage,path), `.${srcExt}`);
+        let name = _.trimEnd(kit.path.relative(opts.srcPage,path), `.${srcExt}`);
         let modPath = await utils.getLayout(opts, name);
         let tpl = require(modPath)({
             vendor: utils.joinUrl(
