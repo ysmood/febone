@@ -23,11 +23,12 @@ export default async (opts = {}) => {
     let drives = kit.require('drives');
     let hashMapStore = {};
     let preloadjs = '(function () { function f (p) { (new Image()).src = p; } ';
+    let hashExclude = new RegExp(opts.hashExclude);
     let hashMap = function (key, value) {
         if (arguments.length === 2) {
             hashMapStore[key] = value;
         } else {
-            if (opts.hashPath === 'on')
+            if (opts.hashPath === 'on' && !hashExclude.test(key))
                 return hashMapStore[key];
             else
                 return key;
