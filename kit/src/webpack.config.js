@@ -34,7 +34,7 @@ let self = {
     ],
 
     output: {
-        filename: opts.isWebpackProduction ? 'vendor.min.js' : 'vendor.js',
+        filename: opts.isWebpackProduction ? '[name].min.js' : '[name].js',
         path: kit.path.join(opts.dist, opts.page)
     },
 

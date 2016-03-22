@@ -24,7 +24,7 @@
     "eslint-loader": "1.1.0",
     "less": "2.5.3",
     "less-loader": "2.2.1",
-    "mx-fe-bone-kit": "0.7.0",
+    "mx-fe-bone-kit": "0.7.2",
     "node-libs-browser": "0.5.3",
     "nokit": "0.19.1",
     "path-to-regexp": "1.2.1",
