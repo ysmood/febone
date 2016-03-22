@@ -92,11 +92,11 @@ export default async (opts = {}) => {
         let tpl = require(modPath)({
             vendor: utils.joinUrl(
                 cdnPrefix(),
-                hashMap(utils.joinUrl(opts.page, 'vendor.js'))
+                hashMap(utils.joinUrl(opts.page, 'vendor.min.js'))
             ),
             page: utils.joinUrl(
                 cdnPrefix(),
-                hashMap(utils.joinUrl(opts.page, `${name}.js`))
+                hashMap(utils.joinUrl(opts.page, `${name}.min.js`))
             )
         });
         return kit.outputFile(`${opts.dist}/${name}.html`, await compileRes(tpl, modPath));

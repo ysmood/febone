@@ -28,13 +28,13 @@ let self = {
     plugins: [
         new webpack.optimize.CommonsChunkPlugin(
             'vendor',
-            'vendor.js'
+            opts.isWebpackProduction ? 'vendor.min.js' : 'vendor.js'
         ),
         require('./webpack-notifier')()
     ],
 
     output: {
-        filename: '[name].js',
+        filename: opts.isWebpackProduction ? 'vendor.min.js' : 'vendor.js',
         path: kit.path.join(opts.dist, opts.page)
     },
 
