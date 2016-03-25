@@ -8,9 +8,9 @@
  * 认证示例，参考 auth-example.js 文件
  */
 
-import defaultRoutes from 'mx-fe-bone-kit/lib/default-routes';
+var defaultRoutes = require('mx-fe-bone-kit/lib/default-routes');
 
-export default (app, opts) => {
+module.exports = (app, opts) => {
     // 默认路由方式，包括页面路由、图标和静态文件的路由
     defaultRoutes(app, opts);
 };

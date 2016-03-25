@@ -1,4 +1,4 @@
-export default ({ vendor, page }) =>
+module.exports = (data) =>
 
 `<!DOCTYPE html>
 <html>
@@ -8,7 +8,7 @@ export default ({ vendor, page }) =>
     <link rel="shortcut icon" type="image/png" href="/img/favicon.ico?__CDN__"/>
 </head>
 <body>
-    <script type="text/javascript" src="${vendor}"></script>
-    <script type="text/javascript" src="${page}"></script>
+    <script type="text/javascript" src="${data.vendor}"></script>
+    <script type="text/javascript" src="${data.page}"></script>
 </body>
 </html>`;

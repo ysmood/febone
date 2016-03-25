@@ -14,24 +14,19 @@
   },
   "license": "MIT",
   "dependencies": {
-    "babel-runtime": "5.8.29",
-    "nokit": "0.19.1",
+    "nokit": "0.20.0",
     "path-to-regexp": "1.2.1",
     "send": "0.13.0",
-    "vane": "0.2.0"
+    "vane": "0.2.2"
   },
   "files": [
     "lib"
   ],
   "devDependencies": {
-    "babel": "5.8.29",
-    "babel-core": "5.8.33",
-    "babel-eslint": "4.1.8",
     "eslint": "1.7.3",
     "webpack": "1.12.2"
   },
   "eslintConfig": {
-    "parser": "babel-eslint",
     "rules": {
       "indent": [
         2,
@@ -63,7 +58,8 @@
     },
     "env": {
       "browser": true,
-      "node": true
+      "node": true,
+      "es6": true
     },
     "extends": "eslint:recommended"
   }

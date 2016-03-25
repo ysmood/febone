@@ -99,7 +99,7 @@
 
 - `node_modules/.bin/no` 输入起来太麻烦了。
 
-  > 你可以将 `nokit` 安装到全局： `npm install -g nokit`，你以后就只用输入类似 `no --help` 这样的短命了就行了。
+  > 你可以将 `nokit` 安装到全局： `npm install -g nokit`，你以后就只用输入类似 `no --help` 这样的短名了就行了。
   > 当然你还需要全局安装 babel 来支持 ES7： `npm install -g babel`。
 
 - 我怎么把当前库当成一个 npm package 呢？

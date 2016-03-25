@@ -1,6 +1,4 @@
-// nofile-pre-require: babel-core/register
-
-import kit from 'nokit';
+var kit = require('nokit');
 
 /**
  * option 收录了 no 命令主要的参数。函数 option 接收三个参数，最后一个是默认值。
@@ -32,7 +30,7 @@ import kit from 'nokit';
  *
  */
 
-export default (task, option) => {
+module.exports = (task, option) => {
     /*
      * option('参数表达式', '注释', '默认值');
      */

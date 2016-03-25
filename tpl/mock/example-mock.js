@@ -1,9 +1,9 @@
 // 这只是个示例文件，不会被版本跟踪
 
-import kit from 'nokit';
-import defaultRoutes from 'mx-fe-bone-kit/lib/default-routes';
-let proxy = kit.require('proxy');
-let { match, select } = proxy;
+var kit = require('nokit');
+var defaultRoutes = require('mx-fe-bone-kit/lib/default-routes');
+var proxy = kit.require('proxy');
+var { match, select } = proxy;
 
 /**
  * 有几个辅助函数，如select，match等的具体含义可以参考[nokit](https://github.com/ysmood/nokit)
@@ -12,7 +12,7 @@ let { match, select } = proxy;
  *
  * app中间件方式，参考[noflow](https://github.com/ysmood/noflow)
  */
-export default (app, opts) => {
+module.exports = (app, opts) => {
     // 默认路由方式，包括页面路由、图标和静态文件的路由
     defaultRoutes(app, opts);
 

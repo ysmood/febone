@@ -1,5 +1,5 @@
-import '../style/demo.less';
+import "../style/demo.less";
 
-import demo from '../tpl/demots';
+import demo from "../tpl/demots";
 
-document.body.innerHTML = demo('Hello Typescript!');
+document.body.innerHTML = demo("Hello Typescript!");

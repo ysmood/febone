@@ -6,9 +6,9 @@ import defaultRoutes from 'mx-fe-bone-kit/lib/default-routes';
 // 文档 https://www.npmjs.com/package/body-parser
 import bodyParser from 'body-parser';
 
-let { select, match, midToFlow } = kit.require('proxy');
+var { select, match, midToFlow } = kit.require('proxy');
 
-export default (app, opts) => {
+module.exports = (app, opts) => {
     // 默认路由方式，包括页面路由、图标和静态文件的路由
     defaultRoutes(app, opts);
 

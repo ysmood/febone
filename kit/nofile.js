@@ -1,14 +1,7 @@
-// nofile-pre-require: babel-core/register
+var kit = require('nokit');
 
-import kit from 'nokit';
-
-export default (task) => {
-    task('default build', async () => {
-        await kit.spawn('babel', [
-            '--optional', 'runtime',
-            '-d', 'lib', 'src'
-        ]);
+module.exports = (task) => {
+    task('default build', () => {
+        kit.logs('build');
     });
-
-    task('test', () => kit.spawn('junit', ['test/basic.js']));
 };
