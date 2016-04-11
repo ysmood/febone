@@ -4,7 +4,7 @@ var kit = require('nokit');
 
 var _ = kit._;
 var opts = JSON.parse(process.env['mx-fe-bone-opts']);
-var srcExt = { babel: '.js', 'typescript': '.ts' }[opts.lang];
+var srcExt = { js: '.js', babel: '.js', 'typescript': '.ts' }[opts.lang];
 var extensions = ['', '.js'];
 
 var entry = kit.globSync(`${opts.srcPage}/**/*${srcExt}`).reduce((ret, p) => {
@@ -51,21 +51,27 @@ var self = {
             {
                 test: /\.less$/,
                 loader: 'style!css!less'
-            },
-            {
-                babel: {
-                    test: /\.js?$/,
-                    exclude: /node_modules/,
-                    loader: 'babel'
-                },
-                typescript: {
-                    test: /\.ts?$/,
-                    loader: 'ts-loader'
-                }
-            }[opts.lang]
+            }
         ]
     }
 };
+
+var jsLoader = {
+    babel: {
+        test: /\.js?$/,
+        exclude: /node_modules/,
+        loader: 'babel'
+    },
+    typescript: {
+        test: /\.ts?$/,
+        loader: 'ts-loader'
+    }
+}[opts.lang];
+
+if (jsLoader) {
+    self.module.loaders.push(jsLoader);
+}
+
 
 if (opts.isWebpackProduction) {
 

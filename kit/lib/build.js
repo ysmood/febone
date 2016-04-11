@@ -13,6 +13,7 @@ module.exports = kit.async(function * (opts) {
     opts = _.defaults(opts, defaultOpts);
 
     var srcExt = {
+        js: 'js',
         babel: 'js',
         typescript: 'ts'
     }[opts.lang];
