@@ -12,6 +12,7 @@ var cwd = process.cwd();
 
 module.exports = (app, opts) => {
     var srcExt = {
+        js: 'js',
         babel: 'js',
         typescript: 'ts'
     }[opts.lang];
@@ -23,7 +24,8 @@ module.exports = (app, opts) => {
     );
 
     // vane mock
-    app.push(vaneMock({ token: opts.vaneToken }));
+    if (opts.vane === 'on')
+        app.push(vaneMock({ token: opts.vaneToken }));
 
     // 默认路由服务
     app.push(select(/^\/$/, kit.async(function * ($) {

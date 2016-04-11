@@ -7,6 +7,7 @@ module.exports = {
 
     cdnPrefix: 'http://demo.com',
     mock: 'mock/index.js',
+    vane: 'on',
     vaneToken: 'mock',
     layout: 'src/layout.js',
     dist: 'dist',

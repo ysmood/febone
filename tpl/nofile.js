@@ -42,6 +42,7 @@ module.exports = (task, option) => {
 
     option('--cdnPrefix <url>', 'CDN 前缀，多个用逗号', 'http://c1.demo.com,http://c2.demo.com');
     option('--mock <path>', 'mock 配置入口', 'mock/index.js');
+    option('--vane <on|off>', '是否开启 vane', 'on');
     option('--vaneToken <str>', 'vane mock 的 token', 'mock');
     option('--layout <path>', '页面模板文件夹', 'layout');
     option('--dist <path>', '编译输出文件夹', 'dist');
