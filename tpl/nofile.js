@@ -58,7 +58,7 @@ module.exports = (task, option) => {
     option('--webpack <on|off>', '是否开启 webpack', 'on');
     option('--liveReload <on|off>', '是否启动自动刷新页面: on 或 off', 'on');
 
-    task('default dev', '启动调试服务器和 API 代理', require('mx-fe-bone-kit/lib/dev'));
+    task('default dev', ['clean'], '启动调试服务器和 API 代理', require('mx-fe-bone-kit/lib/dev'));
 
     task('build', ['build-js'], '以产品模式编译项目到 dist 文件夹',
         require('mx-fe-bone-kit/lib/build')
