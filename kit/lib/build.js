@@ -90,7 +90,7 @@ module.exports = kit.async(function * (opts) {
     // 编译出基础页面到 dist 目录
     var list = yield kit.glob(`${opts.srcPage}/**/*.${srcExt}`);
     yield kit.all(list.map(kit.async(function * (path) {
-        var name = _.trimEnd(kit.path.relative(opts.srcPage,path), `.${srcExt}`);
+        var name = kit.path.relative(opts.srcPage,path).slice(0, -srcExt.length - 1);
         var modPath = yield utils.getLayout(opts, name);
         var tpl = require(modPath)({
             vendor: utils.joinUrl(
