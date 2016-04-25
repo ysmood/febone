@@ -14,17 +14,17 @@
   },
   "license": "MIT",
   "dependencies": {
-    "nokit": "0.20.2",
+    "nokit": "0.20.9",
     "path-to-regexp": "1.2.1",
-    "send": "0.13.0",
+    "send": "0.13.2",
     "vane": "0.2.3"
   },
   "files": [
     "lib"
   ],
   "devDependencies": {
-    "eslint": "1.7.3",
-    "webpack": "1.12.2"
+    "eslint": "2.8.0",
+    "webpack": "1.13.0"
   },
   "eslintConfig": {
     "rules": {

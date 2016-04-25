@@ -25,10 +25,10 @@
   "author": "mx",
   "license": "MIT",
   "dependencies": {
-    "nokit": "0.20.8"
+    "nokit": "0.20.9"
   },
   "devDependencies": {
-    "junit": "1.3.2"
+    "junit": "1.4.0"
   },
   "eslintConfig": {
     "rules": {
