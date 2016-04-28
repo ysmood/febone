@@ -1,6 +1,6 @@
 var kit = require('nokit');
 var utils = require('./utils');
-var vaneMock = require('vane/lib/mock');
+var vaneClient = require('vane-client');
 
 kit.require('url');
 var _ = kit._;
@@ -24,8 +24,9 @@ module.exports = (app, opts) => {
     );
 
     // vane mock
-    if (opts.vane === 'on')
-        app.push(vaneMock({ token: opts.vaneToken }));
+    if (opts.vane === 'on') {
+        app.push(vaneClient({ dir: opts.vaneToken }).middlewares.noflow);
+    }
 
     // 默认路由服务
     app.push(select(/^\/$/, kit.async(function * ($) {
