@@ -1,0 +1,14 @@
+{
+    "title": "test",
+    "url": {
+        "value": "/test",
+        "type": "uriTemplate"
+    },
+    "response": {
+        "body": {
+            "type": "json",
+            "value": "\"asf\""
+        }
+    },
+    "version": "0.0.1"
+}
