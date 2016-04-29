@@ -79,7 +79,7 @@ function init () {
     return kit.spawn(kit.path.resolve('bin/index.js'), [], { cwd: testHome })
     .then(function () {
         serverProcess = kit.spawn(
-            'node_modules/.bin/no', ['--pac', 'off'], { cwd: testHome }
+            'node_modules/.bin/no', ['--pac', 'off', '--vane', 'off'], { cwd: testHome }
         ).process;
     });
 }

@@ -83,6 +83,7 @@ function init () {
         serverProcess = kit.spawn(
             'node_modules/.bin/no', [
                 '--port', '8733', '--pacPort', '58733',
+                '--vane', 'off',
                 '--pac', 'off'
             ], { cwd: testHome }
         ).process;
