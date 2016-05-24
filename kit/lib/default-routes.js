@@ -1,6 +1,6 @@
 var kit = require('nokit');
 var utils = require('./utils');
-var vaneClient = require('vane-client');
+var Vane = require('vane');
 
 kit.require('url');
 var _ = kit._;
@@ -25,7 +25,7 @@ module.exports = (app, opts) => {
 
     // vane mock
     if (opts.vane === 'on') {
-        app.push(vaneClient({ dir: opts.vaneToken }).middlewares.noflow);
+        app.push(Vane({ dir: opts.vaneToken }).middlewares.noflow);
     }
 
     // 默认路由服务
