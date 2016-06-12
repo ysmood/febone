@@ -25,6 +25,7 @@ module.exports = (app, opts) => {
 
     // vane mock
     if (opts.vane === 'on') {
+        app.push(proxy.body());
         app.push(Vane({ dir: opts.vaneToken }).middlewares.noflow);
     }
 

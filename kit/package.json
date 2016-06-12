@@ -2,7 +2,7 @@
   "name": "mx-fe-bone-kit",
   "description": "the kit of mx-fe-bone",
   "author": "mx",
-  "version": "0.8.9",
+  "version": "0.8.10",
   "scripts": {
     "no": "no",
     "test": "no test",
@@ -17,7 +17,7 @@
     "nokit": "0.20.10",
     "path-to-regexp": "1.2.1",
     "send": "0.13.2",
-    "vane": "^1.3.10"
+    "vane": "^1.3.21"
   },
   "files": [
     "lib"
