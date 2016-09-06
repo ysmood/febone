@@ -16,7 +16,7 @@
   "dependencies": {
     "nokit": "0.22.28",
     "path-to-regexp": "1.2.1",
-    "send": "0.13.2",
+    "send": "0.14.1",
     "vane": "^1.4.5"
   },
   "files": [

@@ -29,7 +29,7 @@
     "node-libs-browser": "1.0.0",
     "nokit": "0.22.28",
     "path-to-regexp": "1.2.1",
-    "send": "0.13.2",
+    "send": "0.14.1",
     "style-loader": "0.13.1",
     "ts-loader": "0.8.2",
     "typescript": "1.8.10",
