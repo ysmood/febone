@@ -1,3 +1,3 @@
-var config = require('mx-fe-bone-kit/lib/webpack.config');
+var config = require('febone-kit/lib/webpack.config');
 
 module.exports = config;

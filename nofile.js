@@ -8,9 +8,9 @@ var cwd = process.cwd();
 module.exports = function (task, option) {
     var copyTpl, dist;
 
-    // 防止开发 mx-fe-bone 本身时发布到当前目录
+    // 防止开发 febone 本身时发布到当前目录
     try {
-        dist = require(cwd + '/package.json').name === 'mx-fe-bone' ? 'dist' : '.';
+        dist = require(cwd + '/package.json').name === 'febone' ? 'dist' : '.';
     } catch (err) {
         dist = '.';
     }
@@ -35,7 +35,7 @@ module.exports = function (task, option) {
 
         function gInit () { return kit.spawn('git', ['init']); }
         function addBasic () { return kit.spawn('git', ['add', '--all']); }
-        function ciInit () { return kit.spawn('git', ['commit', '-m', 'mx-fe-bone init']).catch(_.noop); }
+        function ciInit () { return kit.spawn('git', ['commit', '-m', 'febone init']).catch(_.noop); }
 
         return kit.flow([gInit, addBasic, ciInit])()
         .then(function () { return kit.spawn('npm', ['install']); })
@@ -91,11 +91,11 @@ module.exports = function (task, option) {
             }).run(opts.output);
         })
         .then(function () {
-            if (process.env['mx-fe-bone-dev'] === 'test') {
+            if (process.env['febone-dev'] === 'test') {
                 var p = opts.output + '/package.json';
                 return kit.readJson(p)
                 .then(function (info) {
-                    info.devDependencies['mx-fe-bone-kit'] = '../../kit';
+                    info.devDependencies['febone-kit'] = '../../kit';
                     return kit.outputJson(p, info, { space: 2 });
                 });
             }
@@ -106,9 +106,9 @@ module.exports = function (task, option) {
         return kit.remove(opts.output);
     });
 
-    task('test', '测试 mx-fe-bone 本身', function () {
+    task('test', '测试 febone 本身', function () {
         return kit.spawn('npm', ['i'], { cwd: 'kit' }).then(function () {
-            process.env['mx-fe-bone-dev'] = 'test';
+            process.env['febone-dev'] = 'test';
             return kit.spawn('junit', ['test/*.js', '-t', 1000 * 60 * 10]);
         });
     });

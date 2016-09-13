@@ -31,7 +31,7 @@ module.exports = kit.async(function * (opts) {
     if (opts.pac === 'on')
         yield kit.spawn('sudo', ['-p', '请输入 sudo 密码: ', '-v']);
 
-    process.env['mx-fe-bone-opts'] = JSON.stringify(opts);
+    process.env['febone-opts'] = JSON.stringify(opts);
 
     var watchReceiver = proxy.flow();
     yield watchReceiver.listen(0);

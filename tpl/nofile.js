@@ -58,15 +58,15 @@ module.exports = (task, option) => {
     option('--webpack <on|off>', '是否开启 webpack', 'on');
     option('--liveReload <on|off>', '是否启动自动刷新页面: on 或 off', 'on');
 
-    task('default dev', ['clean'], '启动调试服务器和 API 代理', require('mx-fe-bone-kit/lib/dev'));
+    task('default dev', ['clean'], '启动调试服务器和 API 代理', require('febone-kit/lib/dev'));
 
     task('build', ['build-js'], '以产品模式编译项目到 dist 文件夹',
-        require('mx-fe-bone-kit/lib/build')
+        require('febone-kit/lib/build')
     );
 
     task('build-js', ['clean'], '编译 js', (opts) => {
         opts.isWebpackProduction = true;
-        process.env['mx-fe-bone-opts'] = JSON.stringify(opts);
+        process.env['febone-opts'] = JSON.stringify(opts);
         return kit.spawn('webpack');
     });
 
@@ -78,7 +78,7 @@ module.exports = (task, option) => {
         kit.spawn('eslint', [`${opts.src}/**/*.js`])
     );
 
-    task('pac-off', '关闭 pac 代理配置', require('mx-fe-bone-kit/lib/pac-set').off);
+    task('pac-off', '关闭 pac 代理配置', require('febone-kit/lib/pac-set').off);
 
-    task('update-bone', '升级脚手架', require('mx-fe-bone-kit/lib/update-bone'));
+    task('update-bone', '升级脚手架', require('febone-kit/lib/update-bone'));
 };

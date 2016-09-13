@@ -22,8 +22,8 @@ module.exports = kit.async(function * () {
             });
         });
 
-        yield kit.spawn('npm', ['i', 'mx-fe-bone@latest']);
-        yield kit.spawn('mx-fe-bone', ['update']);
+        yield kit.spawn('npm', ['i', 'febone@latest']);
+        yield kit.spawn('febone', ['update']);
     } catch (err) {
         console.error(br.red(err));
     }

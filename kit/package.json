@@ -1,6 +1,6 @@
 {
-  "name": "mx-fe-bone-kit",
-  "description": "the kit of mx-fe-bone",
+  "name": "febone-kit",
+  "description": "the kit of febone",
   "author": "mx",
   "version": "0.8.12",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@git.sankuai.com/mx/mx-fe-bone-kit.git"
+    "url": "ssh://git@git.sankuai.com/mx/febone-kit.git"
   },
   "license": "MIT",
   "dependencies": {

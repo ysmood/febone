@@ -1,7 +1,7 @@
 // 这只是个示例文件，不会被版本跟踪
 
 import kit from 'nokit';
-import defaultRoutes from 'mx-fe-bone-kit/lib/default-routes';
+import defaultRoutes from 'febone-kit/lib/default-routes';
 
 // 文档 https://www.npmjs.com/package/body-parser
 import bodyParser from 'body-parser';

@@ -1,7 +1,7 @@
 // 这只是个示例文件，不会被版本跟踪
 
 var kit = require('nokit');
-var defaultRoutes = require('mx-fe-bone-kit/lib/default-routes');
+var defaultRoutes = require('febone-kit/lib/default-routes');
 var proxy = kit.require('proxy');
 var { match, select } = proxy;
 

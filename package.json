@@ -1,14 +1,14 @@
 {
-  "name": "mx-fe-bone",
+  "name": "febone",
   "version": "0.8.5",
   "description": "MX FE project scaffolding helper",
   "main": "lib/index.js",
   "bin": {
-    "mx-fe-bone": "bin/index.js"
+    "febone": "bin/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ysmood/mx-fe-bone.git"
+    "url": "https://github.com/ysmood/febone.git"
   },
   "scripts": {
     "no": "no",

@@ -1,4 +1,4 @@
-这个是 mx-fe-bone 的核心库之一。
+这个是 febone 的核心库之一。
 
 它的唯一对外接口是 `src/public-config.js`。
 
@@ -31,7 +31,7 @@
 如启动开发的服务：
 
 ```
-import dev from 'mx-fe-bone-kit/lib/dev';
+import dev from 'febone-kit/lib/dev';
 
 dev();
 ```

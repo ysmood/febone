@@ -1,4 +1,4 @@
-var opts = JSON.parse(process.env['mx-fe-bone-opts']);
+var opts = JSON.parse(process.env['febone-opts']);
 
 module.exports = () => {
     return {

@@ -1,4 +1,4 @@
-# mx-fe-bone
+# febone
 
 每个目录都会有一个 readme 文件，用于说明这个目录文件的做法。
 
@@ -82,7 +82,7 @@
     目录名及文件名的默认命名规则为字母小写，复合单词用-号分隔的形式，如：dialog.js, alert-dialog.js
 
 
-## mx-fe-bone 的依赖
+## febone 的依赖
 
 ## [nokit](https://github.com/ysmood/nokit)
 
@@ -91,9 +91,9 @@
 依赖列表可以在 `package.json` 的 `devDependencies` 看到，除了 nokit 以外的依赖主要都是语言编译的库，比如 babel 或 less。换句话说本项目除了编译用的依赖是非常轻量的一个系统，架构很透明都可根据标准的开源项目模式查询文档和源代码。
 
 
-## [mx-fe-bone-kit](https://github.com/ysmood/mx-fe-bone-kit)
+## [febone-kit](https://github.com/ysmood/febone-kit)
 
-这个是 mx-fe-bone 的核心库之一，主要用于抽象一些常见的业务功能。
+这个是 febone 的核心库之一，主要用于抽象一些常见的业务功能。
 
 ## FAQ
 

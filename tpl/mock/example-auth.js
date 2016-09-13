@@ -33,7 +33,7 @@
  */
 
 var kit = require('nokit');
-var defaultRoutes = require('mx-fe-bone-kit/lib/default-routes');
+var defaultRoutes = require('febone-kit/lib/default-routes');
 var proxy = kit.require('proxy');
 var match = proxy.match;
 var select = proxy.select;

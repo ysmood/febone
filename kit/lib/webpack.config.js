@@ -3,7 +3,7 @@ var kit = require('nokit');
 
 
 var _ = kit._;
-var opts = JSON.parse(process.env['mx-fe-bone-opts']);
+var opts = JSON.parse(process.env['febone-opts']);
 var srcExt = { js: '.js', babel: '.js', 'typescript': '.ts' }[opts.lang];
 var extensions = ['', '.js'];
 

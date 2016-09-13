@@ -1,5 +1,5 @@
 {
-  "name": "babel-preset-mx-fe-bone",
+  "name": "babel-preset-febone",
   "version": "6.0.10",
   "description": "es2016 preset",
   "main": "index.js",
