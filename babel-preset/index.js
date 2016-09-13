@@ -20,6 +20,7 @@ module.exports = {
     require("babel-plugin-transform-es2015-block-scoping"),
     require("babel-plugin-transform-es2015-typeof-symbol"),
     require("babel-plugin-transform-es2015-modules-commonjs"),
+    require("babel-plugin-transform-async-to-generator"),
     [require("babel-plugin-transform-regenerator"), { async: false, asyncGenerators: false }],
     require("babel-plugin-transform-runtime"),
     require("babel-plugin-transform-react-jsx"),

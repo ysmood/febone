@@ -1,6 +1,6 @@
 {
   "name": "babel-preset-febone",
-  "version": "6.0.10",
+  "version": "6.0.11",
   "description": "es2016 preset",
   "main": "index.js",
   "scripts": {},
@@ -12,6 +12,7 @@
   "dependencies": {
     "babel-plugin-check-es2015-constants": "6.7.2",
     "babel-plugin-syntax-trailing-function-commas": "6.5.0",
+    "babel-plugin-transform-async-to-generator": "^6.7.4",
     "babel-plugin-transform-class-properties": "6.6.0",
     "babel-plugin-transform-es2015-arrow-functions": "6.5.2",
     "babel-plugin-transform-es2015-block-scoped-functions": "6.6.5",
@@ -33,9 +34,9 @@
     "babel-plugin-transform-es2015-typeof-symbol": "6.6.0",
     "babel-plugin-transform-es2015-unicode-regex": "6.5.0",
     "babel-plugin-transform-object-rest-spread": "6.6.5",
-    "babel-plugin-transform-react-jsx": "6.7.4",
+    "babel-plugin-transform-react-jsx": "6.7.5",
     "babel-plugin-transform-regenerator": "6.6.5",
-    "babel-plugin-transform-runtime": "6.6.0"
+    "babel-plugin-transform-runtime": "^6.7.5"
   },
   "repository": {
     "type": "git",
