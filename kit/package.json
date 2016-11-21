@@ -2,7 +2,7 @@
   "name": "febone-kit",
   "description": "the kit of febone",
   "author": "mx",
-  "version": "0.8.12",
+  "version": "0.8.13",
   "scripts": {
     "no": "no",
     "test": "no test",
@@ -14,17 +14,17 @@
   },
   "license": "MIT",
   "dependencies": {
-    "nokit": "0.22.28",
-    "path-to-regexp": "1.2.1",
+    "nokit": "0.23.2",
+    "path-to-regexp": "1.7.0",
     "send": "0.14.1",
-    "vane": "^1.4.5"
+    "vane": "1.5.5"
   },
   "files": [
     "lib"
   ],
   "devDependencies": {
-    "eslint": "2.8.0",
-    "webpack": "1.13.0"
+    "eslint": "3.10.2",
+    "webpack": "1.13.3"
   },
   "eslintConfig": {
     "rules": {

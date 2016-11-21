@@ -26,10 +26,10 @@ var self = {
     entry: entry,
 
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin(
-            'vendor',
-            opts.isWebpackProduction ? 'vendor.min.js' : 'vendor.js'
-        ),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            filename: opts.isWebpackProduction ? 'vendor.min.js' : 'vendor.js'
+        }),
         require('./webpack-notifier')()
     ],
 
