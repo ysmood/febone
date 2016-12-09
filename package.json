@@ -1,6 +1,6 @@
 {
   "name": "febone",
-  "version": "0.8.5",
+  "version": "0.8.7",
   "description": "MX FE project scaffolding helper",
   "main": "lib/index.js",
   "bin": {

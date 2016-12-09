@@ -2,7 +2,7 @@
   "name": "febone-kit",
   "description": "the kit of febone",
   "author": "mx",
-  "version": "0.8.13",
+  "version": "0.8.14",
   "scripts": {
     "no": "no",
     "test": "no test",
