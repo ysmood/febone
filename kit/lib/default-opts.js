@@ -20,6 +20,7 @@ module.exports = {
     hashExclude: '$ ^',
     preload: 'dist/preload.js',
     webpack: 'off',
+    autoOpen: 'off',
     liveReload: 'on',
     lang: 'babel'
 };

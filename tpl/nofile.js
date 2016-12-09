@@ -56,6 +56,7 @@ module.exports = (task, option) => {
     option('--hashExclude <regex>', '匹配的路径将不被 hash', '$ ^');
     option('--lang <str>', '选择主语言与处理器 js, babel 或 typescript', 'babel');
     option('--webpack <on|off>', '是否开启 webpack', 'on');
+    option('--autoOpen <on|off>', '是否自动打开页面', 'on');
     option('--liveReload <on|off>', '是否启动自动刷新页面: on 或 off', 'on');
 
     task('default dev', ['clean'], '启动调试服务器和 API 代理', require('febone-kit/lib/dev'));

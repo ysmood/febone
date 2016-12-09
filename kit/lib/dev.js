@@ -84,5 +84,13 @@ module.exports = kit.async(function * (opts) {
 
     process.on('exit', stop);
 
+    if (opts.autoOpen === 'on') {
+        var pageUrl = 'http://127.0.0.1:' + opts.port;
+        kit.retry(30, 100, kit.request)(pageUrl)
+        .then(function () {
+            kit.xopen(pageUrl);
+        }, _.noop);
+    }
+
     return stop;
 });
