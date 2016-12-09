@@ -1,18 +1,43 @@
 var kit = require('nokit');
 var defaultOpts = require('./default-opts');
 var autoUpdate = require('./auto-update');
-
-var br = kit.require('brush');
+var Webpack = require('webpack');
 var proxy = kit.require('proxy');
 var _ = kit._;
-var webpack;
 
 function runWebpack () {
-    kit.logs(br.cyan('reload webpack'));
-    if (webpack) { webpack.kill(); }
-    webpack = kit.spawn(
-        'webpack', ['--watch', '--progress', '--colors']
-    ).process;
+    var defer = kit.Deferred();
+
+    var webpackConfig = require(
+        kit.path.join(process.cwd(), 'webpack.config.js')
+    );
+    var webpack = Webpack(webpackConfig);
+
+    webpack.watch({
+        aggregateTimeout: 10
+    }, function (err, stats) {
+        console.log(stats.toString({
+            colors: true,
+
+            hash: false,
+            version: false,
+            timings: false,
+            assets: false,
+            chunks: false,
+            chunkModules: false,
+            modules: false,
+            children: false,
+            cached: false,
+            reasons: false,
+            source: false,
+            errorDetails: true,
+            chunkOrigins: false
+        }));
+
+        defer.resolve();
+    });
+
+    return defer.promise;
 }
 
 /**
@@ -33,10 +58,15 @@ module.exports = kit.async(function * (opts) {
 
     process.env['febone-opts'] = JSON.stringify(opts);
 
+    if (opts.webpack === 'on') {
+        yield runWebpack();
+    }
+
     var watchReceiver = proxy.flow();
     yield watchReceiver.listen(0);
     var monitor = kit.monitorApp({
         args: [require.resolve('./dev-server'), opts],
+        onWatchFiles: function () {},
         opts: {
             env: _.extend({}, process.env, {
                 nokitMonitorAppPort: watchReceiver.server.address().port
@@ -47,25 +77,9 @@ module.exports = kit.async(function * (opts) {
 
     watchReceiver.push(proxy.body(), $ => monitor.watch($.reqBody + ''));
 
-    if (opts.webpack === 'on') {
-        runWebpack();
-        kit.watchFiles(
-            ['webpack.config.js', 'package.json'],
-            { handler: runWebpack }
-        );
-        kit.watchDir(opts.srcPage, {
-            patterns: '*.js',
-            handler: (type) => {
-                if (type === 'modify') { return; }
-                runWebpack();
-            }
-        });
-    }
-
     function stop () {
         monitor.stop();
         watchReceiver.close();
-        if (webpack) { webpack.kill(); }
     }
 
     process.on('exit', stop);

@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 var kit = require('nokit');
-
+var SimpleProgressPlugin = require('webpack-simple-progress-plugin');
 
 var _ = kit._;
 var opts = JSON.parse(process.env['febone-opts']);
@@ -30,6 +30,7 @@ var self = {
             name: 'vendor',
             filename: opts.isWebpackProduction ? 'vendor.min.js' : 'vendor.js'
         }),
+        new SimpleProgressPlugin(),
         require('./webpack-notifier')()
     ],
 

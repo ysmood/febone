@@ -16,6 +16,7 @@
   "dependencies": {
     "path-to-regexp": "1.7.0",
     "send": "0.14.1",
+    "webpack-simple-progress-plugin": "0.0.1"
   },
   "files": [
     "lib"
