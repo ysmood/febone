@@ -14,7 +14,8 @@ module.exports = (app, opts) => {
     var srcExt = {
         js: 'js',
         babel: 'js',
-        typescript: 'ts'
+        typescript: 'ts',
+        typescriptx: 'tsx'
     }[opts.lang];
 
     // 日志和帮助服务
@@ -71,7 +72,7 @@ module.exports = (app, opts) => {
     }));
 
     // 如果 src 里的文件新一些就将其复制到 dist
-    app.push(select(`/`, kit.async(function * ($) {
+    app.push(select('/', kit.async(function * ($) {
         var url = $.url;
 
         var query = url.indexOf('?');

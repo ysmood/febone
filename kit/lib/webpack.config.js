@@ -4,7 +4,7 @@ var SimpleProgressPlugin = require('webpack-simple-progress-plugin');
 
 var _ = kit._;
 var opts = JSON.parse(process.env['febone-opts']);
-var srcExt = { js: '.js', babel: '.js', 'typescript': '.ts' }[opts.lang];
+var srcExt = { js: '.js', babel: '.js', 'typescript': '.ts', 'typescriptx': '.tsx' }[opts.lang];
 var extensions = ['', '.js'];
 
 var entry = kit.globSync(`${opts.srcPage}/**/*${srcExt}`).reduce((ret, p) => {
@@ -21,6 +21,9 @@ entry.vendor = _.keys(require(`${process.cwd()}/package.json`).dependencies);
 
 if (opts.lang === 'typescript')
     extensions.push('.ts');
+
+if (opts.lang === 'typescript')
+    extensions.push('.tsx');
 
 var self = {
     entry: entry,

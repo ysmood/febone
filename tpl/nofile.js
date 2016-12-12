@@ -54,7 +54,7 @@ module.exports = (task, option) => {
     option('--preload <path>', '编译出的图片预载器文件路径', 'dist/preload.js');
     option('--hashPath <on|off>', '编译时是否 hash 路径', 'on');
     option('--hashExclude <regex>', '匹配的路径将不被 hash', '$ ^');
-    option('--lang <str>', '选择主语言与处理器 js, babel 或 typescript', 'babel');
+    option('--lang <str>', '选择主语言与处理器 js, babel , typescript 或 typescriptx', 'babel');
     option('--webpack <on|off>', '是否开启 webpack', 'on');
     option('--autoOpen <on|off>', '是否自动打开页面', 'on');
     option('--liveReload <on|off>', '是否启动自动刷新页面: on 或 off', 'on');
