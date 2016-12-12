@@ -22,8 +22,8 @@ entry.vendor = _.keys(require(`${process.cwd()}/package.json`).dependencies);
 if (opts.lang === 'typescript')
     extensions.push('.ts');
 
-if (opts.lang === 'typescript')
-    extensions.push('.tsx');
+if (opts.lang === 'typescriptx')
+    extensions.push('.ts', '.tsx');
 
 var self = {
     entry: entry,
