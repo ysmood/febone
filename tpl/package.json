@@ -8,6 +8,9 @@
     "no": "no",
     "prepublish": "no build"
   },
+  "nofile": {
+    "autoInstallDeps": true
+  },
   "repository": {
     "type": "git",
     "url": "ssh://git@git.com/mx/demo.git"
@@ -27,7 +30,7 @@
     "less-loader": "2.2.3",
     "febone-kit": "0.8.14",
     "node-libs-browser": "2.0.0",
-    "nokit": "0.23.6",
+    "nokit": "0.23.23",
     "path-to-regexp": "1.7.0",
     "send": "0.14.1",
     "style-loader": "0.13.1",
