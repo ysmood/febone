@@ -22,5 +22,6 @@ module.exports = {
     webpack: 'off',
     autoOpen: 'off',
     liveReload: 'on',
-    lang: 'babel'
+    lang: 'babel',
+    webpackWatchPoll: 'off',
 };

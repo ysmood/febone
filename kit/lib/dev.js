@@ -5,7 +5,7 @@ var Webpack = require('webpack');
 var proxy = kit.require('proxy');
 var _ = kit._;
 
-function runWebpack () {
+function runWebpack (opts) {
     var defer = kit.Deferred();
 
     var webpackConfig = require(
@@ -13,7 +13,11 @@ function runWebpack () {
     );
     var webpack = Webpack(webpackConfig);
 
+    if (opts.webpackWatchPoll !== 'off')
+        var poll = +opts.webpackWatchPol
+
     webpack.watch({
+        poll,
         aggregateTimeout: 10
     }, function (err, stats) {
         console.log(stats.toString({
@@ -59,7 +63,7 @@ module.exports = kit.async(function * (opts) {
     process.env['febone-opts'] = JSON.stringify(opts);
 
     if (opts.webpack === 'on') {
-        yield runWebpack();
+        yield runWebpack(opts);
     }
 
     var watchReceiver = proxy.flow();
