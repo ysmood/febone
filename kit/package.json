@@ -2,7 +2,7 @@
   "name": "febone-kit",
   "description": "the kit of febone",
   "author": "mx",
-  "version": "0.8.16",
+  "version": "0.8.17",
   "scripts": {
     "no": "no",
     "test": "no test",
@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "path-to-regexp": "1.7.0",
-    "send": "0.14.1",
+    "send": "0.15.3",
     "webpack-simple-progress-plugin": "0.0.1"
   },
   "files": [
